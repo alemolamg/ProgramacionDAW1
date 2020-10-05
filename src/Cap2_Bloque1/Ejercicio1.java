@@ -30,8 +30,8 @@ public class Ejercicio1 {
 			if(numVectores[i] > numMayor)
 				numMayor=numVectores[i];
 			
-			if(numVectores[i] < numMenor)
-				numMenor = numVectores[i];	
+//			if(numVectores[i] < numMenor)
+//				numMenor = numVectores[i];	
 		}
 		
 		System.out.println("El número mayor es: " + numMayor);
