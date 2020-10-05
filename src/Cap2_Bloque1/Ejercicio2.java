@@ -2,6 +2,14 @@ package Cap2_Bloque1;
 
 import javax.swing.JOptionPane;
 
+
+/**
+ * Aplicación que calcula el número menor de los añadidos por el usuario.
+ * La cantidad de números es una constante (numNums)
+ * 
+ * @author alemol
+ *
+ */
 public class Ejercicio2 {
 
 	public static void main(String[] args) {
@@ -11,11 +19,6 @@ public class Ejercicio2 {
 		String lector;
 		
 		System.out.println("Calcula el número mayor y menor de una serie de números");
-		
-//		for (int j = 0; j < numNums; j++) {
-//			lector = JOptionPane.showInputDialog("Introduzca el " + (1+j) +"º número entero: ");
-//			numVectores[j] = Integer.parseInt(lector);			
-//		}
 		
 		lectorVectoresInt(numNums, numVectores);
 		
