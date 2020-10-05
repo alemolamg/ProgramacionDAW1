@@ -14,6 +14,7 @@ public class Ejercicio7 {
 		
 		numLeido = ~numLeido + 1;
 		System.out.println("Complemento es: " + numLeido);
+		
 	}
 	
 	/**
