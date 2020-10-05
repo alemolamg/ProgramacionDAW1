@@ -19,8 +19,7 @@ public class Ejercicio6 {
 	/**
 	 * Lee por pantalla los números
 	 * 
-	 * @param cant  	cantidad de números que se leerán
-	 * @param vectorInt	vector donde guardar los números
+	 * @return (int) número leido
 	 */
 	public static int  lectorInt () {		
 		String lector = JOptionPane.showInputDialog("Introduzca el número entero: ");
