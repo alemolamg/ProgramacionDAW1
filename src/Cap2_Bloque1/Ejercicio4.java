@@ -4,9 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Ejercicio4 {
 	
-public static void main(String[] args) {
-		
-		
+	public static void main(String[] args) {		
 		
 		int numNums = 5, numMayor = Integer.MIN_VALUE, numMenor = Integer.MAX_VALUE;
 		int [] numVectores = new int [numNums];
@@ -25,7 +23,7 @@ public static void main(String[] args) {
 				numMenor = numVectores[i];	
 		}
 		
-		System.out.println("El número mayor es: " + numMayor);
+		System.out.println("El número menor es: " + numMenor);
 			
 	}
 
