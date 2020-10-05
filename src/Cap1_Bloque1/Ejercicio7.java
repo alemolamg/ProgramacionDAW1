@@ -11,11 +11,9 @@ public class Ejercicio7 {
 		
 
 		numLeido = lectorInt();
-		if ( (numLeido & numUno) == numUno )
-			System.out.println("El número es IMPAR");
-		else
-			System.out.println("El número es PAR");
 		
+		numLeido = ~numLeido + 1;
+		System.out.println("Complemento es: " + numLeido);
 	}
 	
 	/**
