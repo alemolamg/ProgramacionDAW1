@@ -2,7 +2,7 @@ package Cap2_Bloque3;
 
 import javax.swing.JOptionPane;
 
-import com.sun.tools.classfile.Dependencies.ClassFileError;
+//import com.sun.tools.classfile.Dependencies.ClassFileError;
 
 public class Ejercicio2 {
 
@@ -34,6 +34,7 @@ public class Ejercicio2 {
 		
 		} while (numMenu > 0);
 
+		System.out.println("CASIO");
 	}
 	
 	
