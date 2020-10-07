@@ -1,28 +1,16 @@
-package Cap2_Bloque1;
+package capitulo02.bloque01;
 
 import javax.swing.JOptionPane;
 
-/**
- * Aplicación que calcula el número mayor dado por el usuario.
- * La cantidad de números es una constante (numNums)
- * 
- * @author alemol
- *
- */
-public class Ejercicio1 {
+public class Ejercicio5 {
 	public static void main(String[] args) {
 		
-		int numNums = 2, numMayor = Integer.MIN_VALUE, numMenor = Integer.MAX_VALUE;
+		int numNums = 5, numMayor = Integer.MIN_VALUE, numMenor = Integer.MAX_VALUE;
 		int [] numVectores = new int [numNums];
 		String lector;
 		
 		System.out.println("Calcula el número mayor y menor de una serie de números");
-		
-//		for (int j = 0; j < numNums; j++) {
-//			lector = JOptionPane.showInputDialog("Introduzca el " + (1+j) +"º número entero: ");
-//			numVectores[j] = Integer.parseInt(lector);			
-//		}
-		
+				
 		lectorVectoresInt(numNums, numVectores);
 		
 		
@@ -30,13 +18,12 @@ public class Ejercicio1 {
 			if(numVectores[i] > numMayor)
 				numMayor=numVectores[i];
 			
-//			if(numVectores[i] < numMenor)
-//				numMenor = numVectores[i];	
+			if(numVectores[i] < numMenor)
+				numMenor = numVectores[i];	
 		}
 		
-		System.out.println("El número mayor es: " + numMayor);
+		System.out.println("El número mayor es: " + numMayor + " y el menor es: " + numMenor);
 			
-		
 	}
 
 	/**
@@ -54,4 +41,5 @@ public class Ejercicio1 {
 		}
 		
 	}
+
 }
