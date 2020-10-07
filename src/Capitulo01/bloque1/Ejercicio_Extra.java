@@ -1,16 +1,10 @@
-package Cap1_Bloque1;
+package Capitulo01.bloque1;
 
-import java.util.Scanner;
+import com.sun.java_cup.internal.runtime.Scanner;
 
-/**
- * Aplicación que se encarga de calcular el área de un círculo dado un radio. 
- * 
- * @author alemol
- * @
- */
 public class Ejercicio_Extra {
-
-	public static void main(String[] args) {
+	
+public static void main(String[] args) {
 		
 		double radio = 0, area;
 		Scanner leer = new Scanner (System.in);

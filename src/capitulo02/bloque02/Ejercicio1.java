@@ -1,4 +1,4 @@
-package Cap2_Bloque2;
+package capitulo02.bloque02;
 
 //1º.- Realiza un ejercicio que acumule cinco números introducidos
 //por el usuario, es decir, que sume las cantidades introducidas, 
