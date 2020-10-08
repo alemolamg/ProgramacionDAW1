@@ -9,7 +9,6 @@ public class Ejercicio7 {
 		int numUno = 1, numLeido = 0;
 //		System.out.print(" operación &: " + (lectorInt() & numUno) );
 		
-
 		numLeido = lectorInt();
 		
 		numLeido = ~numLeido + 1;
