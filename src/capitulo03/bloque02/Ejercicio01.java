@@ -1,10 +1,10 @@
-package capitulo03.bloque01;
+package capitulo03.bloque02;
 
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio03 {
+public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		Vector<Integer> vectorInt = new Vector<Integer>();
@@ -24,7 +24,7 @@ public class Ejercicio03 {
 		
 		
 		for (int i = 0; i < cantidad; i++) {
-			if(vectorInt.elementAt(i) >= 0)
+			if(vectorInt.elementAt(i) > 0)
 				numPositivos++;
 			else
 				numNegativos++;
