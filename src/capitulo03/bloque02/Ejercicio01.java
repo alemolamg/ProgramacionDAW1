@@ -8,7 +8,8 @@ public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		Vector<Integer> vectorInt = new Vector<Integer>();
-		int limite = 10, cantidad = 4, numPositivos = 0, numNegativos = 0;
+		int limite = 10, cantidad = 4, total = 0;
+		float media;
 		
 		System.out.println("Programa que lee por pantalla números y detecta cuantos"
 				+ " son positivos y cuantos negativos");
@@ -24,14 +25,11 @@ public class Ejercicio01 {
 		
 		
 		for (int i = 0; i < cantidad; i++) {
-			if(vectorInt.elementAt(i) > 0)
-				numPositivos++;
-			else
-				numNegativos++;
+			total = total + vectorInt.elementAt(i);			
 		}
 		
-		System.out.println("El total de números positivos escritos son: " + numPositivos +
-				" y los negativos son: " + numNegativos);
+		media = (float)(total / cantidad);
+		System.out.println("La media de todos los números es: " + media);
 
 	}
 	
