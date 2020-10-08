@@ -4,12 +4,13 @@ import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio01 {
+public class Ejercicio02 {
 
 	public static void main(String[] args) {
 		Vector<Integer> vectorInt = new Vector<Integer>();
 		int limite = 10, cantidad = 4, total = 0;
-		float media;
+		int numMayor = Integer.MIN_VALUE, numMenor = Integer.MAX_VALUE;	
+		//Integer.MAX_VALUE y Integer.MIN_VALUE indican el mayor y el menor valor que se le asigna a un Integer (int)
 		
 		System.out.println("Programa que lee por pantalla números y detecta cuantos"
 				+ " son positivos y cuantos negativos");
@@ -25,11 +26,13 @@ public class Ejercicio01 {
 		
 		
 		for (int i = 0; i < cantidad; i++) {
-			total = total + vectorInt.elementAt(i);			
+			if (vectorInt.elementAt(i) < numMenor)
+				numMenor = vectorInt.elementAt(i);
+			if (vectorInt.elementAt(i) > numMayor)
+				numMayor = vectorInt.elementAt(i);
 		}
 		
-		media = (float)(total / cantidad);
-		System.out.println("La media de todos los números es: " + media);
+		System.out.println("El número más grande es: " + numMayor + " y el menor es: " + numMenor);
 
 	}
 	
