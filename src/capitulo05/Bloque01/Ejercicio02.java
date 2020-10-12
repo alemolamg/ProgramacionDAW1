@@ -20,14 +20,6 @@ public class Ejercicio02 {
 		for (int i = array.length-1; i >= 0; i--)
 			System.out.println("Posición " + (array.length-i) + ", número: " + array[i]);
 		
-//		media = suma / (float) limite;
-//		
-//		System.out.println("La suma total de elementos es: " + suma);
-//		System.out.println("El número mayor es : " + numMayor);
-//		System.out.println("El número menor es : " + numMenor);
-//		System.out.println("La media es " + media);
-		
-
 	}
 	
 	/**
