@@ -39,7 +39,6 @@ public class Ejercicio02 {
 	
 	/**
 	 * Lee por pantalla los números
-	 * 
 	 * @return (int) número leido
 	 */
 	public static int  lectorInt () {		
