@@ -21,7 +21,7 @@ public class Ejercicio02 {
 			
 		}
 		
-		for (int i = 0; i < array1.length; i++)
+		for (int i = 0; i < array3.length; i++)
 			System.out.println("Posición " + i + ", valor = " + array3[i]);
 	}
 		
