@@ -13,8 +13,9 @@ public class Ejercicio01 {
 			if (array[i] % 2 == 0 || array[i] < 0)
 				array[i] = ~array[i] + 1;		
 		}
+		
 		for (int i = 0; i < array.length; i++)
-		System.out.println("Posición " + (i+1) + ", valor = " + array[i]);
+			System.out.println("Posición " + (i+1) + ", valor = " + array[i]);
 	}
 		
 	

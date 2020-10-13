@@ -5,9 +5,9 @@ public class Ejercicio1 {
 	
 	public static void main(String[] args) {
 		
-		int     num1=0;
+		int     num1=8;
         float   num2=9;
-        double  num3=0;
+        double  num3=52.236;
 
 //        Scanner leer = new Scanner (System.in);
 
@@ -20,7 +20,7 @@ public class Ejercicio1 {
 //        System.out.println ("Introduce Número Double");
 //        num3 = leer.nextDouble();
 
-        System.out.println ("Números: " + num1 +"; " + num2 +"; " + num3);
+        System.out.println ("\nNúmeros: " + num1 +"; " + num2 +"; " + num3);
 		
 	}     
 
