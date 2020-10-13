@@ -30,7 +30,6 @@ public class Ejercicio05 {
 		
 		}
 		
-		
 		for (int i = 0; i < array1.length; i++)
 			System.out.println("Array1: Posición " + i + ", valor = " + array1[i]);
 		
