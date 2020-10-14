@@ -54,9 +54,11 @@ public class Ejercicio06 {
 			}
 			
 		
+		//Mostramos el vector
 		for (int i = 0; i < array1.length; i++)
 			System.out.println("Array1: Posición " + i + ", valor = " + array1[i]);
 		
+		//Mostramos el vector
 		for (int i = 0; i < array2.length; i++)
 			System.out.println("Array2: Posición " + i + ", valor = " + array2[i]);
 	}
