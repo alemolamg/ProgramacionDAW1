@@ -1,13 +1,12 @@
 package capitulo05.bloque03;
 
 import java.util.Random;
-import java.util.Vector;
 
-public class Ejercicio01 {
+public class Ejercicio02 {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Programa de ordenación por brújula");
+
+		System.out.println("Programa de ordenación por Inserción directa");
 		
 		int iterator = 0, limite = 150;
 	    boolean continuar = true;				//sirve para seguir en el buble.
@@ -17,17 +16,8 @@ public class Ejercicio01 {
 			array [i] = generadorRandomInt();			
 		}
 	   
-	    while ( continuar) {
-	        continuar = false;
-	        iterator ++;
-	        for (int i = 0; i < limite - iterator ; i++)
-	            if (array[i] > array[i + 1]){
-	                continuar = true;		//cambiamos a true para seguir trabajando
-	                int temp = array[i];
-	                array[i] = array[i + 1];
-	                array[i + 1] = temp;
-	            }
-	    }
+	    
+	    
 		
 	    //Mostramos el vector
 		for (int i = 0; i < array.length; i++)
