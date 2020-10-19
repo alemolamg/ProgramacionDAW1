@@ -6,8 +6,7 @@ public class Ejercicio02 {
 
 	public static void main(String[] args) {
 		
-		int iterator = 0, limite = 150, aux = 0;
-	    boolean continuar = true;				//sirve para seguir en el buble.
+		int iterator = 0, limite = 150, valorAux = 0, j = 0;
 	    int [] array = new int [limite];
 
 	    System.out.println("Programa de ordenación por Inserción directa");
@@ -17,14 +16,12 @@ public class Ejercicio02 {
 		}
 	   
 	    
-	    int j = 0;
-	    for(int i = 0; i < array.length; i++) {
-	    	aux = array[i];
-	    	for (j = i; j > 0; j--) {
-	    		if( array[j-1] > aux)
-	    			array[j] = array[j-1];
+	    for( iterator = 0; iterator < array.length; iterator++) {
+	    	valorAux = array[iterator];
+	    	for ( j = iterator; j > 0 && array[j - 1] > valorAux; j--) {
+	            array[j] = array[j - 1];
 	    	}
-	    	array[j] = aux;
+	    	array[j] = valorAux;
 	    }
 		
 	    //Mostramos el vector
