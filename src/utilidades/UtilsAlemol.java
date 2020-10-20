@@ -27,8 +27,16 @@ public class UtilsAlemol {
 	 * obtienes un número al azar entre 0 y 100
 	 * @return	num (int) entre 0 y 100
 	 */
-	public static int obtenerNumeroAzar () {
-		 return (int) Math.round(Math.random() * 101);
+	public static int obtenerNumeroAzar100 () {
+		 return (int) Math.round(Math.random() * 100);
+	}
+	
+	/**
+	 * obtienes un número al azar entre 0 y 10
+	 * @return	num (int) entre 0 y 100
+	 */
+	public static int obtenerNumeroAzar10 () {
+		 return (int) Math.round(Math.random() * 10);
 	}
 	
 	
@@ -54,6 +62,9 @@ public class UtilsAlemol {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
 	}
+	
+	
+	
 	
 	
 	public static int obtenerEnteroJO() {

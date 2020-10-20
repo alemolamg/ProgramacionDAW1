@@ -10,7 +10,7 @@ public class Ejercicio04 {
 		int[] array = new int [limite];
 		
 		for (int i = 0; i < limite; i++) { // Inicializa array con números aleatorios
-			array[i] = UtilsAlemol.obtenerNumeroAzar();
+			array[i] = UtilsAlemol.obtenerNumeroAzar100();
 		}
 		
 		UtilsAlemol.imprimirArray(array);
