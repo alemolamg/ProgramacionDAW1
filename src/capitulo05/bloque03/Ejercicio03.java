@@ -5,7 +5,7 @@ import java.util.Random;
 public class Ejercicio03 {
 
 	public static void main(String[] args) {
-		int iterator = 0, limite = 1000, valorAux = 0;
+		int limite = 150;
 		int[] array = new int[limite];
 
 		System.out.println("Programa de ordenación por shell");
@@ -13,12 +13,10 @@ public class Ejercicio03 {
 		for (int i = 0; i < limite; i++) { // Inicializa array con números aleatorios
 			array[i] = generadorRandomInt();
 		}
-		
-//		array = new int[] {423, 384, 223, 224, 317, 118, 677, 329, 951, 529};
 
 		imprimirArray(array);		
 		
-		algoritmoShell(array, limite);
+		algoritmoShell(array);
 
 		imprimirArray(array);
 	}
@@ -35,7 +33,8 @@ public class Ejercicio03 {
 	
 	
 	/**
-	 * 
+	 * Muestra un array por pantalla.
+	 * @param array	objeto a mostrar.
 	 */
 	private static void imprimirArray(int array[]) {
 		for (int i = 0; i < array.length; i++) // mostrar array por pantalla
@@ -43,7 +42,11 @@ public class Ejercicio03 {
 		System.out.println();
 	}
 	
-	private static void algoritmoShell(int array [], int limite) {
+	/**
+	 * 
+	 * @param array
+	 */
+	private static void algoritmoShell(int array []) {
 		int division = array.length;
 		boolean hayIntercambios;
 		do {
@@ -67,9 +70,6 @@ public class Ejercicio03 {
 			}
 			
 		}while (division - 1 != 0);
-		
-		
-		
 	}
 	
 }
