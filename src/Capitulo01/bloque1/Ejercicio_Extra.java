@@ -6,7 +6,7 @@ public class Ejercicio_Extra {
 	
 public static void main(String[] args) {
 		
-		double radio = 0, area;
+		double radio = 0, area = 0;
 		Scanner leer = new Scanner (System.in);
 		
 		System.out.println("Introduce el radio del círculo en cm: ");
