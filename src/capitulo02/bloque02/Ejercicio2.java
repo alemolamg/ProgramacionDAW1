@@ -62,5 +62,6 @@ public class Ejercicio2 {
 		String lector = JOptionPane.showInputDialog("Introduzca el número entero: ");
 		return Integer.parseInt(lector);			
 	}
-
+	
 }
+
