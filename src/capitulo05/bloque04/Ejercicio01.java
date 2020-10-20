@@ -1,5 +1,6 @@
 package capitulo05.bloque04;
 
+import jdk.internal.misc.FileSystemOption;
 import utilidades.UtilsAlemol;
 
 public class Ejercicio01 {
@@ -11,6 +12,9 @@ public class Ejercicio01 {
 		for (int i = 0; i < tamanio; i++) { // Inicializa array con números aleatorios
 			array[i] = UtilsAlemol.obtenerNumeroAzar100();
 		}
+		
+		System.out.println("El resultado de examinar"
+				+ " el array es: " + examinarArrayInt(array));
 
 	}
 
