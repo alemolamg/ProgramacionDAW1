@@ -28,7 +28,7 @@ public class UtilsAlemol {
 	 * @return	num (int) entre 0 y 100
 	 */
 	public static int obtenerNumeroAzar () {
-		 return (int) Math.round(Math.random() * 101);
+		 return (int) Math.round(Math.random() * 100);
 	}
 	
 	
