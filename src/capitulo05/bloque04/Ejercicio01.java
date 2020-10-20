@@ -1,6 +1,5 @@
 package capitulo05.bloque04;
 
-import jdk.internal.misc.FileSystemOption;
 import utilidades.UtilsAlemol;
 
 public class Ejercicio01 {
@@ -29,6 +28,7 @@ public class Ejercicio01 {
 			return -1;
 		else {
 			return array[array.length / 2];
+			
 		}
 		
 	}
