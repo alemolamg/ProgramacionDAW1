@@ -8,7 +8,6 @@ public class Ejercicio02 {
 
 	public static void main(String[] args) {
 		int tamanio = 20;
-//		int[] array = new int [tamanio];
 		int[] arrayAprobado = new int [tamanio];
 		int[] arraySuspenso = new int [tamanio];
 		
