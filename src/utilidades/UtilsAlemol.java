@@ -82,6 +82,11 @@ public class UtilsAlemol {
 	}
 	
 	
+//	public static double generadorRandomDouble() {
+//		
+//	}
+	
+	
 	public static void mostrarTexto (String texto) {
 		System.out.println(texto);
 	}
