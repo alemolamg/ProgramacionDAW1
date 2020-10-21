@@ -1,10 +1,19 @@
 package capitulo05.bloque04;
 
+import utilidades.UtilsAlemol;
+
 public class Ejercicio03 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int tamanio = 20;
+		double[] array = new double [tamanio];
+		
+		for(int i = 0; i < array.length; i++)
+			array[i] = UtilsAlemol.obtenerNumeroAzar100() + (double) UtilsAlemol.obtenerNumeroAzar100() / 100;			
+		
+				
+		
+		
 	}
 
 }
