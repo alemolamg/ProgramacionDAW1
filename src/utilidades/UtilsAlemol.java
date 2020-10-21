@@ -56,15 +56,14 @@ public class UtilsAlemol {
 		return numero;
 	}
 
-	
-	
+	/**
+	 * Usa el método Scanner para obtener el entero
+	 * @return int
+	 */
 	public static int obtenerEnteroScanner() {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
 	}
-	
-	
-	
 	
 	
 	public static int obtenerEnteroJO() {
@@ -80,6 +79,11 @@ public class UtilsAlemol {
 	public static int generadorRandomInt() {
 		Random r1 = new Random();
 		return r1.nextInt(1001);
+	}
+	
+	
+	public static void mostrarTexto (String texto) {
+		System.out.println(texto);
 	}
 	
 }
