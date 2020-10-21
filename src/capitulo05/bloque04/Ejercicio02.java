@@ -9,38 +9,35 @@ public class Ejercicio02 {
 	public static void main(String[] args) {
 		int tamanio = 20;
 		int[] arrayAprobado = new int [tamanio];
-		int[] arraySuspenso = new int [tamanio];
+//		int[] arraySuspenso = new int [tamanio];
 		
 		for (int i = 0; i< arrayAprobado.length; i++) {
 			arrayAprobado[i] = UtilsAlemol.obtenerNumeroAzar10();
-			arraySuspenso[i] = 0;
 		}
-		
-		calMedia(arrayAprobado, arraySuspenso);
+		calPorcentaje(arrayAprobado);
 		
 	}
 	
-	private static void calMedia (int vecPos[], int vecNeg[]) {
-		int j = 0;
+	
+	/**
+	 * Calcula el porcentaje de aprobados y suspensos en clase.
+	 * @param vecPos vector con notas, quedarán las positivas
+	 * @param vecNeg vector a rellenar.
+	 */
+	private static void calPorcentaje (int vecPos[]) {
 		double porApr = 0, porSus = 0;
 		for (int i = 0; i < vecPos.length; i++) {
-			if (vecPos[i] < 5) {
-				vecNeg[j] = vecPos[i];
-				vecPos[i] = 0;
-				j++;
-			}
-			porApr += vecPos[i];
-			porSus += vecNeg[i];
+			if (vecPos[i] < 5) 
+				porSus++;
+			else 
+				porApr++;
 		}	
 		
-		porApr = (porApr * vecPos.length) / 100;
-		porSus = (porSus * vecNeg.length) / 100;
+		porApr = (double) (porApr * 100) / vecPos.length;
+		porSus = (double) (porSus * 100) / vecPos.length;
 		
-		System.out.println("El porcentaje de las notas positivas es: " + (porApr) );
-		System.out.println("El porcentaje de las notas negativas es: " + (porSus) );
-		
-		
+		System.out.println("El porcentaje de las notas positivas es: " + (porApr) + "%");
+		System.out.println("El porcentaje de las notas negativas es: " + (porSus) + "%");		
 	}
-	
 
 }
