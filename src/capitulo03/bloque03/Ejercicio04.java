@@ -2,21 +2,20 @@ package capitulo03.bloque03;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio03 {
+public class Ejercicio04 {
 
 	public static void main(String[] args) {
-		int numero = 0, numMayor = Integer.MIN_VALUE;
-		System.out.println("Programa que calcula el mayor de los números leidos (0 para salir)");
+		int numero = 0, numMenor = Integer.MAX_VALUE;
+		System.out.println("Programa que calcula el menor de los números leidos (0 para salir)");
 		
 		do {
 			numero = lectorInt();
-			if (numero != 0 && numero > numMayor) {		//Saber si no es 0 y es mayor que el anterior número
-				numMayor = numero;
+			if (numero != 0 && numero < numMenor) {		//Saber si no es 0 y es mayor que el anterior número
+				numMenor = numero;
 			}
 		} while (numero != 0);
 		
-		System.out.println("El número mayor es: " + numMayor);
-
+		System.out.println("El número menor es: " + numMenor);
 	}
 	
 	
@@ -29,5 +28,4 @@ public class Ejercicio03 {
 		String lector = JOptionPane.showInputDialog("Introduzca número entero: ");
 		return Integer.parseInt(lector);				
 	}
-
 }
