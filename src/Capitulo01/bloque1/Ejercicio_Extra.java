@@ -1,6 +1,6 @@
 package Capitulo01.bloque1;
 
-import com.sun.java_cup.internal.runtime.Scanner;
+import java.util.Scanner;
 
 public class Ejercicio_Extra {
 	
