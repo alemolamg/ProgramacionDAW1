@@ -2,7 +2,7 @@ package capitulo05.bloque04;
 
 import javax.print.attribute.standard.MediaPrintableArea;
 
-import utilidades.UtilsAlemol;
+import alemol.UtilsAlemol;
 
 public class Ejercicio02 {
 
