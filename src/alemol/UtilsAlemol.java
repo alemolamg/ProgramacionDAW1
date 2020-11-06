@@ -91,4 +91,15 @@ public class UtilsAlemol {
 		System.out.println(texto);
 	}
 	
+	
+	/**
+	 * 
+	 * @param min Límite inferior de generación del número al azar
+	 * @param max Límite superior de generación del número al azar
+	 * @return Número generado al azar entre dos límites.
+	 */
+	public static int obtenerNumeroAzar (int min, int max) {
+		 return (int) Math.round(Math.random() * (max - min)) + min;
+	}
+	
 }
