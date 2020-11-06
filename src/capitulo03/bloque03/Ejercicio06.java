@@ -1,6 +1,6 @@
 package capitulo03.bloque03;
 
-import utilidades.UtilsAlemol;
+import alemol.UtilsAlemol;
 
 public class Ejercicio06 {
 

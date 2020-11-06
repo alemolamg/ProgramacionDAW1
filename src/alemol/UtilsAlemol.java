@@ -1,4 +1,4 @@
-package utilidades;
+package alemol;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
@@ -89,6 +89,17 @@ public class UtilsAlemol {
 	
 	public static void mostrarTexto (String texto) {
 		System.out.println(texto);
+	}
+	
+	
+	/**
+	 * 
+	 * @param min Límite inferior de generación del número al azar
+	 * @param max Límite superior de generación del número al azar
+	 * @return Número generado al azar entre dos límites.
+	 */
+	public static int obtenerNumeroAzar (int min, int max) {
+		 return (int) Math.round(Math.random() * (max - min)) + min;
 	}
 	
 }
