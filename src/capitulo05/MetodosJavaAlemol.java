@@ -77,7 +77,7 @@ public class MetodosJavaAlemol {
 		do {
 			System.out.println("El límite inferior es " + min + " y el superior es " + max);
 			valorUsuario = obtenerEnteroScanner();			
-		}while ( min < valorUsuario && valorUsuario < max);
+		}while ( min > valorUsuario || valorUsuario > max);
 		return valorUsuario;
 	}
 
