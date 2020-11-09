@@ -51,6 +51,22 @@ public class MetodosJavaAlemol {
 		System.out.println(numTexto);
 		
 		
+//		6º.- Método, llamado "imprimeMinimoAMaximo", que reciba tres valores enteros como argumentos de entrada. 
+//		Debe imprimir dichos valores en orden de menor a mayor.
+		
+		imprimeMinimoAMaximo(8,15,3);
+		
+		
+//		7º.- La serie de Fibonacci es una serie numérica que comienza en los números 1, 1 y continua de forma infinita, 
+//		calculando cada mienbro de la serie como la suma de los dos anteriores. De esta manera, la serie de Fibonacci 
+//		comienza 1, 1, 2, 3, 5, 8, 13, 21, 34, 55.......... Debes realizar un método llamado "fibonacci". Recibirá un argumento 
+//		de entrada, de tipo entero. El método debe devolver un array con la serie de Fibonacci. El parámetro de entrada del método 
+//		determinará la longitud del array a devolver. El método main recibirá el array y lo imprimirá en la consola.
+		
+		
+		
+		
+		
 	}
 	
 	/**
@@ -94,7 +110,34 @@ public class MetodosJavaAlemol {
 			return num2;
 	}
 	
-
+	
+	/**
+	 * Muestra por pantalla el orden de las tres variables de menor a mayor.
+	 * @param a
+	 * @param b
+	 * @param c
+	 */
+	public static void imprimeMinimoAMaximo(int a, int b, int c) {
+		
+		if(a < b) {				// Comprobamos si a es menor que b
+			if(a < c)			// ahora si a es el menor de todos	
+				if (c < b)		// comprobar el orden de los otros dos números
+					System.out.print(a +", " + c +", " + b);
+				else
+					System.out.print(a +", " + b +", " + c);
+			else
+				System.out.print(c +", " + a +", " + b );
+		} else
+			if(b < c)
+				if ( c < a)
+					System.out.print(b + ", " + c + ", " + a);
+				else
+					System.out.print(b + ", " + a + ", " + c );
+			else
+				System.out.print(c +", " + b +", " + a);
+	}
+	
+	
 	/**
 	 * Recibe dos números y devuleve el menor de los dos.
 	 * @param num1
