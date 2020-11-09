@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 import javax.security.auth.callback.TextOutputCallback;
 
-import org.w3c.dom.Text;
-
 public class MetodosJavaAlemol {
 
 	public static void main(String[] args) {
@@ -93,7 +91,7 @@ public class MetodosJavaAlemol {
 //		la recursividad.
 		
 		System.out.println("--------- Ejercicio 10 ---------");
-		
+		muestraNumerosRecursividad(1);
 		
 	}
 	
