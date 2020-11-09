@@ -15,6 +15,7 @@ public class MetodosJavaAlemol {
 //		El valor devuelto debe ser flotante. El método "main" debe llamar a este otro método, 
 //		con valores inventados por ti, e imprimir el valor de la media en la consola de salida.
 //		
+		System.out.println("--------- Ejercicio 01 ---------");
 		float calcMedia = media (3, 4, 5, 6.7f);
 		System.out.println("La media es: " + calcMedia);
 
@@ -25,6 +26,7 @@ public class MetodosJavaAlemol {
 //		el valor mínimo y el máximo que se ha indicado, seguirá pidiendo números al usuario hasta que se obtenga uno válido. 
 //		Finalmente se debe devolver dicho valor del usuario al método main, que lo imprimirá en la consola.
 		
+		System.out.println("--------- Ejercicio 02 ---------");
 		int valorEntreNumeros = obtenerNumeroDeUsuarioEntreMinimoYMaximo(18, 3);
 		System.out.println("El número es: " + valorEntreNumeros);
 		
@@ -33,6 +35,7 @@ public class MetodosJavaAlemol {
 //		de entrada. El método main pedirá dos números al usuario y los enviará a este nuevo método. 
 //		Finalmente imprimirá en consola el valor devuelto por el método.
 		
+		System.out.println("--------- Ejercicio 03 ---------");
 		int elMaximo = maximo(8, 71);
 		System.out.println("El número mayor es: " + elMaximo);
 		
@@ -40,6 +43,7 @@ public class MetodosJavaAlemol {
 //		4º.- Método llamado "numeroImparEntreLimites" que devuelva un número entero aleatorio, impar y comprendido entre
 //		dos límites recibidos como parámetros de entrada. "main" debe llamar a este método e imprimir el valor devuelto.
 		
+		System.out.println("--------- Ejercicio 04 ---------");
 		int numAleatorioConLimites = numeroImparEntreLimites(63, 93);
 		System.out.println("El número " + numAleatorioConLimites + " está en los límites");
 		
@@ -47,6 +51,7 @@ public class MetodosJavaAlemol {
 //		5º.- Realiza un método que reciba un valor entero, del 1 al 10, como argumento de entrada y devuelva un String, 
 //		con  dicho número escrito en palabras. Llama a este método "getStringFromEntero".
 		
+		System.out.println("--------- Ejercicio 05 ---------");
 		String numTexto = getStringFromEntero(8);
 		System.out.println(numTexto);
 		
@@ -54,6 +59,7 @@ public class MetodosJavaAlemol {
 //		6º.- Método, llamado "imprimeMinimoAMaximo", que reciba tres valores enteros como argumentos de entrada. 
 //		Debe imprimir dichos valores en orden de menor a mayor.
 		
+		System.out.println("--------- Ejercicio 06 ---------");
 		imprimeMinimoAMaximo(8,15,3);
 		
 		
@@ -63,8 +69,30 @@ public class MetodosJavaAlemol {
 //		de entrada, de tipo entero. El método debe devolver un array con la serie de Fibonacci. El parámetro de entrada del método 
 //		determinará la longitud del array a devolver. El método main recibirá el array y lo imprimirá en la consola.
 		
+		System.out.println("--------- Ejercicio 07 ---------");
+		int arrayFibonacci[] = fibonacci(8);
+		imprimeArray(arrayFibonacci);
+		
+//		8º.- Método que imprima en pantalla un array, recibirá un array como parámetro de entrada y lo mostrará en consola. 
+//		Main debe enviar el array al método, llamado "imprimeArray".
+		
+		System.out.println("--------- Ejercicio 08 ---------");
+		imprimeArray(fibonacci(10));
 		
 		
+//		9º.- Método que "recorte" un array. El método recibirá un array, un "primerIndice" y un "ultimoIndice" y debe devolver 
+//		un array, formado con los elementos del array recibido, cuyos índices estén dentro del intervalo cerrado formado 
+//		por los dos índices recibidos
+
+		System.out.println("--------- Ejercicio 09 ---------");
+		int array[] = recorte(fibonacci(10),2,7);
+		imprimeArray(array);
+		
+		
+//		10º.- Método que muestre en pantalla los números del 1 al 100. El único requisito para esto es que debe hacerse utilizando
+//		la recursividad.
+		
+		System.out.println("--------- Ejercicio 10 ---------");
 		
 		
 	}
@@ -108,6 +136,40 @@ public class MetodosJavaAlemol {
 			return num1;
 		else
 			return num2;
+	}
+	
+	
+	/**
+	 * Crea una sucesión de Fibonacci de 'num' números de longitud
+	 * @param num
+	 * @return
+	 */
+	public static int [] fibonacci (int num) {
+		int fibonacci[] = new int [num];
+		fibonacci[0] = 1;
+		fibonacci[1] = 1;
+		
+		for(int i = 2; i < fibonacci.length; i++)
+			fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+		return fibonacci;
+	}
+	
+	
+	/**
+	 * Recibe un array y devuelve un array acortado por los 
+	 * @param array
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
+	public static int [] recorte (int array[], int num1, int num2) {
+		int iterator = 0, mayor = maximo(num1, num2), menor = minimo(num1, num2);
+		int nuevoArray [] = new int [mayor - menor];
+		
+		for (int i = menor; i < mayor; i++, iterator++) {
+			nuevoArray[iterator] = array[i];
+		}
+		return nuevoArray;
 	}
 	
 	
@@ -212,6 +274,16 @@ public class MetodosJavaAlemol {
 		}
 	}
 	
+	/**
+	 * Muestra un array de enteros en la pantalla.
+	 * @param imprimeme (int [])
+	 */
+	public static void imprimeArray(int imprimeme[]) {
+		for(int i = 0; i < imprimeme.length; i++)
+			System.out.print(imprimeme[i] + " ");
+		System.out.println("");
+	}
+	
 	
 	public static int numeroImparEntreLimites (int num1, int num2) {
 		return obtenerNumeroAzar(minimo(num1,num2), maximo(num1, num2));
@@ -235,5 +307,16 @@ public class MetodosJavaAlemol {
 	 */
 	public static int obtenerNumeroAzar (int min, int max) {
 		 return (int) Math.round(Math.random() * (max - min)) + min;
+	}
+	
+	
+	public static void muestraNumerosRecursividad (int i) {
+		if (i <= 100) {
+			System.out.print(i + " ");
+			muestraNumerosRecursividad(i++);
+		} else
+			System.out.println("Vector recorrido");
+			
+		
 	}
 }
