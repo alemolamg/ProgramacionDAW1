@@ -13,7 +13,7 @@ public class MetodosJavaAlemol {
 //		El valor devuelto debe ser flotante. El método "main" debe llamar a este otro método, 
 //		con valores inventados por ti, e imprimir el valor de la media en la consola de salida.
 //		
-		System.out.println("--------- Ejercicio 01 ---------");
+		System.out.println("\n--------- Ejercicio 01 ---------");
 		float calcMedia = media (3, 4, 5, 6.7f);
 		System.out.println("La media es: " + calcMedia);
 
@@ -24,7 +24,7 @@ public class MetodosJavaAlemol {
 //		el valor mínimo y el máximo que se ha indicado, seguirá pidiendo números al usuario hasta que se obtenga uno válido. 
 //		Finalmente se debe devolver dicho valor del usuario al método main, que lo imprimirá en la consola.
 		
-		System.out.println("--------- Ejercicio 02 ---------");
+		System.out.println("\n--------- Ejercicio 02 ---------");
 		int valorEntreNumeros = obtenerNumeroDeUsuarioEntreMinimoYMaximo(18, 3);
 		System.out.println("El número es: " + valorEntreNumeros);
 		
@@ -33,7 +33,7 @@ public class MetodosJavaAlemol {
 //		de entrada. El método main pedirá dos números al usuario y los enviará a este nuevo método. 
 //		Finalmente imprimirá en consola el valor devuelto por el método.
 		
-		System.out.println("--------- Ejercicio 03 ---------");
+		System.out.println("\n--------- Ejercicio 03 ---------");
 		int elMaximo = maximo(8, 71);
 		System.out.println("El número mayor es: " + elMaximo);
 		
@@ -41,7 +41,7 @@ public class MetodosJavaAlemol {
 //		4º.- Método llamado "numeroImparEntreLimites" que devuelva un número entero aleatorio, impar y comprendido entre
 //		dos límites recibidos como parámetros de entrada. "main" debe llamar a este método e imprimir el valor devuelto.
 		
-		System.out.println("--------- Ejercicio 04 ---------");
+		System.out.println("\n--------- Ejercicio 04 ---------");
 		int numAleatorioConLimites = numeroImparEntreLimites(63, 93);
 		System.out.println("El número " + numAleatorioConLimites + " está en los límites");
 		
@@ -49,7 +49,7 @@ public class MetodosJavaAlemol {
 //		5º.- Realiza un método que reciba un valor entero, del 1 al 10, como argumento de entrada y devuelva un String, 
 //		con  dicho número escrito en palabras. Llama a este método "getStringFromEntero".
 		
-		System.out.println("--------- Ejercicio 05 ---------");
+		System.out.println("\n--------- Ejercicio 05 ---------");
 		String numTexto = getStringFromEntero(8);
 		System.out.println(numTexto);
 		
@@ -57,8 +57,9 @@ public class MetodosJavaAlemol {
 //		6º.- Método, llamado "imprimeMinimoAMaximo", que reciba tres valores enteros como argumentos de entrada. 
 //		Debe imprimir dichos valores en orden de menor a mayor.
 		
-		System.out.println("--------- Ejercicio 06 ---------");
+		System.out.println("\n--------- Ejercicio 06 ---------");
 		imprimeMinimoAMaximo(8,15,3);
+		System.out.println(" ");
 		
 		
 //		7º.- La serie de Fibonacci es una serie numérica que comienza en los números 1, 1 y continua de forma infinita, 
@@ -67,14 +68,14 @@ public class MetodosJavaAlemol {
 //		de entrada, de tipo entero. El método debe devolver un array con la serie de Fibonacci. El parámetro de entrada del método 
 //		determinará la longitud del array a devolver. El método main recibirá el array y lo imprimirá en la consola.
 		
-		System.out.println("--------- Ejercicio 07 ---------");
+		System.out.println("\n--------- Ejercicio 07 ---------");
 		int arrayFibonacci[] = fibonacci(8);
 		imprimeArray(arrayFibonacci);
 		
 //		8º.- Método que imprima en pantalla un array, recibirá un array como parámetro de entrada y lo mostrará en consola. 
 //		Main debe enviar el array al método, llamado "imprimeArray".
 		
-		System.out.println("--------- Ejercicio 08 ---------");
+		System.out.println("\n--------- Ejercicio 08 ---------");
 		imprimeArray(fibonacci(10));
 		
 		
@@ -82,15 +83,15 @@ public class MetodosJavaAlemol {
 //		un array, formado con los elementos del array recibido, cuyos índices estén dentro del intervalo cerrado formado 
 //		por los dos índices recibidos
 
-		System.out.println("--------- Ejercicio 09 ---------");
+		System.out.println("\n--------- Ejercicio 09 ---------");
 		int array[] = recorte(fibonacci(10),2,7);
-		imprimeArray(array);
+		imprimeArray(array);		
 		
 		
 //		10º.- Método que muestre en pantalla los números del 1 al 100. El único requisito para esto es que debe hacerse utilizando
 //		la recursividad.
 		
-		System.out.println("--------- Ejercicio 10 ---------");
+		System.out.println("\n--------- Ejercicio 10 ---------");
 		muestraNumerosRecursividad(1);
 		
 	}
@@ -311,10 +312,9 @@ public class MetodosJavaAlemol {
 	public static void muestraNumerosRecursividad (int i) {
 		if (i <= 100) {
 			System.out.print(i + " ");
-			muestraNumerosRecursividad(i++);
+			muestraNumerosRecursividad(++i);
 		} else
-			System.out.println("Vector recorrido");
-			
-		
+			System.out.println("\nVector recorrido");	
 	}
+	
 }
