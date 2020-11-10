@@ -4,9 +4,9 @@ Repositorio para el código de programación de 1º DAW de Alejandro Molero Góm
 Todo el contenido creado por mí (Alemol) para la asignatura de programación, será subido a este repositorio y su copia en la nube de Google Drive. 
 
 
-Capítulo 01: Terminado
-Capítulo 02: Terminado
-Capítulo 03: No terminado, Bloque 02
-Capítulo 04: No empezado.
+*Capítulo 01: Terminado
+*Capítulo 02: Terminado
+*Capítulo 03: No terminado, Bloque 02
+*Capítulo 04: No empezado.
 
-Capítulo 05: Trabajando ...
+*Capítulo 05: Trabajando ...
