@@ -1,4 +1,4 @@
-package capitulo05;
+package capitulo05.bloque05_metodos_y_arrays;
 
 import java.util.Scanner;
 
