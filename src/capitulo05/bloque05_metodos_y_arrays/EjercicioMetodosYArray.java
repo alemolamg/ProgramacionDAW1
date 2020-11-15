@@ -7,24 +7,35 @@ public class EjercicioMetodosYArray {
 
 	public static void main(String[] args) {
 		
-		System.out.println("------- Ejercicio 01 ------");
+		System.out.println("\n------- Ejercicio 01 ------");
 		int arrayInt [] = new int [] {3,8,2,36,87,-3};
 		UtilsAlemol.mostrarTexto(stringFromArray(arrayInt));
 		
 		
-		System.out.println("------- Ejercicio 02 ------");
-		int array2 [] = new int [] {8,60,2,55,20,3,2,44};
+		System.out.println("\n------- Ejercicio 02 ------");
+		int array2 [] = new int [] {8,60,2,55,20,8,2,44};
 		UtilsAlemol.imprimirArray(array2);
 		findAndReplace(arrayInt, 2, 99);
 		UtilsAlemol.imprimirArray(array2);
 		
 		
-		System.out.println("------- Ejercicio 03 ------");
+		System.out.println("\n------- Ejercicio 03 ------");
 		UtilsAlemol.imprimirArray(array2);
 		array2 = addInteger(array2, 8);
 		UtilsAlemol.imprimirArray(array2);
+
 		
+		System.out.println("\n------- Ejercicio 04 ------");
+		UtilsAlemol.imprimirArray(array2);
+		int num = 8, cantidadNumero = countOccurrences(array2, num);
+		UtilsAlemol.mostrarTexto("El número " + num + " aparece " + cantidadNumero 
+				+ " veces en el array2.");
+
 		
+		System.out.println("\n------- Ejercicio 05 ------");
+		UtilsAlemol.imprimirArray(array2);
+		int array5 [] = removeInteger(array2, 8);
+		UtilsAlemol.imprimirArray(array5);
 	}
 	
 	
@@ -59,7 +70,7 @@ public class EjercicioMetodosYArray {
 	 * @param valorBuscar
 	 * @param numReempazo
 	 */
-	public static void findAndReplace(int array [], int valorBuscar, int numReempazo) {
+	public static  void findAndReplace(int array [], int valorBuscar, int numReempazo) {
 			for (int i = 0; i < array.length; i++)
 				if(array[i] == valorBuscar)
 					array[i] = numReempazo;		
@@ -86,9 +97,51 @@ public class EjercicioMetodosYArray {
 				nuevoVector[i] = array[i];
 			else
 				nuevoVector[i] = valorNuevo;
+			i++;
 		}while (i <= array.length);
 		return nuevoVector;
 	}
+	
+	
+	/**
+	 * 4.- Realiza un método llamado "countOccurrences", que reciba:
+	 * - Un array de números enteros.
+	 * - Un valor entero.
+	 * El método debe devolver un valor entero, que corresponda con el número de 
+	 * veces que el valor entero recibido como segundo parámetro exista dentro 
+	 * del array recibido como primer parámetro.
+	 * @param array
+	 * @param numBuscar
+	 * @return
+	 */
+	public static int countOccurrences (int array[], int numBuscar) {
+		int contador = 0;
+		for (int i = 0; i < array.length; i++)
+			if(array[i] == numBuscar)
+				contador++;
+		return contador;
+	}
+	 
+	
+	/**
+	 * Ejercicio 05
+	 * @param vector
+	 * @param valor
+	 * @return
+	 */
+	public static int[] removeInteger(int vector[], int valor) {
+		int tamArrayNuevo = countOccurrences(vector, valor);
+		int newArray[] = new int [vector.length - tamArrayNuevo];
+		int cont = 0;
+		for (int i= 0; i < vector.length; i++) {
+			if(vector[i] != valor) {
+				newArray[cont] = vector[i];
+				cont++;
+			}
+		}
+		return newArray;
+	}
+	
 	
 	
 }
