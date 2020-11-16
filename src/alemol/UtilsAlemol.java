@@ -97,4 +97,18 @@ public class UtilsAlemol {
 		 return (int) Math.round(Math.random() * (max - min)) + min;
 	}
 	
+	
+	/**
+	 * Recibe una matriz de enteros y la imprime por pantalla.
+	 * @param matriz
+	 */
+	public static void imprimirMatriz (int matriz [][]) {
+		for(int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j <matriz.length; j++)
+				System.out.print(matriz[i][j] + " ");
+		System.out.println("");
+		}
+	}
+	
+	
 }
