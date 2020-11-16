@@ -89,6 +89,7 @@ public class EjercicioMetodosYArray {
 	 *	- El método debe devolver un array de tipo entero. Main debe recoger el array devuelto e imprimirlo en consola.
 	 * @param array
 	 * @param valor
+	 * @return (int[])
 	 */
 	public static int[] addInteger (int array[], int valorNuevo) {
 		int nuevoVector[] = new int [array.length + 1], i=0;
