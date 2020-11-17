@@ -78,7 +78,7 @@ public class UtilsAlemol {
 	 */
 	public static int generadorRandomInt() {
 		Random r1 = new Random();
-		return r1.nextInt(1001);
+		return r1.nextInt(100);
 	}
 	
 	
