@@ -17,9 +17,14 @@ public class Ejercicio04_MatrizDiagonal {
 	
 	public static boolean matrizDiagonal(int matriz[][]) {
 		for(int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j <matriz[i].length; j++)
-				if(matriz[i][j] != 0 && i == j)
-					return false;
+			for (int j = 0; j <matriz[i].length; j++) {
+				if (i == j) {
+					if(matriz[i][j] == 0)
+						return false;
+				}else 
+					if (matriz[i][j] != 0)
+						return false;
+			}
 		}
 		return true;
 		
