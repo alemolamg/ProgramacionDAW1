@@ -103,6 +103,7 @@ public class UtilsAlemol {
 	 * @param matriz
 	 */
 	public static void imprimirMatriz (int matriz [][]) {
+		System.out.println();
 		for(int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j <matriz[i].length; j++)
 				System.out.print(matriz[i][j] + " ");
