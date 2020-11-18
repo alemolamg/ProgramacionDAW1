@@ -111,4 +111,19 @@ public class UtilsAlemol {
 	}
 	
 	
+	/**
+	 * Crea una matriz dado el número de sus dos dimensiones
+	 * @param fila 	(int) número de filas
+	 * @param col	(int) número columnas
+	 * @return	matriz (int[][])
+	 */
+	public static int[][] crearMatrizAlAzar(int fila, int col) {
+		int matriz[][] = new int [fila][col];
+		for(int i = 0; i < matriz.length; i++) 
+			for (int j = 0; j < matriz[i].length; j++) 
+				matriz[i][j] = UtilsAlemol.generadorRandomInt();
+		return matriz;
+	}
+	
+	
 }
