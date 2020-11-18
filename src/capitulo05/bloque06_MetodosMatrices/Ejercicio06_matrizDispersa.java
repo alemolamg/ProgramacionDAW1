@@ -12,7 +12,9 @@ public class Ejercicio06_matrizDispersa {
 		}
 	
 	public static boolean matrizDispersa(int matriz[][]) {
-		boolean arrayCol[] = {false,false,false,false};	// Inicializo un array para saber si hay cero en la columna
+		boolean arrayCol[] = new boolean [matriz[0].length];	// Inicializo un array para saber si hay cero en la columna
+		for(int j = 0;j < arrayCol.length; j++)
+			arrayCol[j] = false;
 		
 		for(int i = 0; i < matriz.length; i++) {
 			boolean hayCeroFila=false;	// en principio no hay 0 en la fila
