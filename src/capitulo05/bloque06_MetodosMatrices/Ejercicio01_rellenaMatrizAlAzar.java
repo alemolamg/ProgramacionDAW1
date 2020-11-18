@@ -6,18 +6,19 @@ public class Ejercicio01_rellenaMatrizAlAzar {
 
 	public static void main(String[] args) {
 		
-		int tamanio = 3;
-		int matriz[][] = new int [tamanio][tamanio];
-		rellenarMatrizAlAzar(matriz);
+		int tamanioCol = 3, tamanioFila = 3;
+		int matriz[][] = crearMatrizAlAzar(tamanioFila, tamanioCol);
+		
 		UtilsAlemol.imprimirMatriz(matriz);
 		
 	}
 	
-	public static void rellenarMatrizAlAzar(int matriz [][]) {
+	public static int[][] crearMatrizAlAzar(int fila, int col) {
+		int matriz[][] = new int [fila][col];
 		for(int i = 0; i < matriz.length; i++) 
 			for (int j = 0; j < matriz[i].length; j++) 
 				matriz[i][j] = UtilsAlemol.generadorRandomInt();
-		
+		return matriz;
 	}
 	
 }
