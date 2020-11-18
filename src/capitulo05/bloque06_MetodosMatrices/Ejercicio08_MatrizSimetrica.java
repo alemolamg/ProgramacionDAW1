@@ -3,9 +3,9 @@ package capitulo05.bloque06_MetodosMatrices;
 public class Ejercicio08_MatrizSimetrica {
 
 	public static void main(String[] args) {
-		int matriz[][]={{0,7,3,4},
+		int matriz[][]={{0,7,0,4},
 						{4,5,0,2},
-						{0,0,1,2},
+						{0,-8,1,2},
 						{0,3,9,0}};
 		verificar(matrizEsSimetrica(matriz));		
 	}
