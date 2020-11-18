@@ -12,7 +12,17 @@ public class Ejercicio06_matrizDispersa {
 		}
 	
 	public static boolean matrizDispersa(int matriz[][]) {
-		boolean arrayCol[] = new boolean [matriz[0].length];	// Inicializo un array para saber si hay cero en la columna
+		int tamanio = 0, maximo = 0;	// tamaño del vector.
+		for (int i = 0; i < matriz.length; i++) {
+			tamanio = 0;
+			for (int j = 0;j < matriz[i].length; i++) {
+				tamanio++;
+			if (tamanio > maximo)
+				maximo = tamanio;
+			}
+		}
+		
+		boolean arrayCol[] = new boolean [maximo];	// Inicializo un array para saber si hay cero en la columna
 		for(int j = 0;j < arrayCol.length; j++)
 			arrayCol[j] = false;
 		
