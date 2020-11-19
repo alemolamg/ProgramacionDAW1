@@ -12,6 +12,7 @@ public class Ejercicio07_matrizEnArray {
 		
 		UtilsAlemol.imprimirMatriz(matriz);
 		int vector[] = matrizEnArray(matriz);
+		System.out.println();
 		UtilsAlemol.imprimirArray(vector);
 
 	}
@@ -24,13 +25,13 @@ public class Ejercicio07_matrizEnArray {
 	public static int[] matrizEnArray(int matriz[][]) {
 		int tamanio = 0;	// tamaño del vector.
 		for (int i = 0; i < matriz.length; i++)
-			for (int j = 0;j < matriz[i].length; i++)
+			for (int j = 0;j < matriz[i].length; j++)
 				tamanio++;
 		
 		int array[] = new int [tamanio];
 		int k = 0;
 		for (int i = 0; i < matriz.length; i++)
-			for (int j = 0; j < matriz[i].length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
 				array[k] = matriz[i][j];
 				k++;
 			}		
