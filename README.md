@@ -6,5 +6,9 @@ Todo el contenido creado por mí (Alemol) para la asignatura de programación, s
 * [Capítulo 01](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/Capitulo01/bloque1): Terminado
 * [Capítulo 02](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo02): Terminado
 * [Capítulo 03](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo03): Terminado
-* [Capítulo 04](): No empezado.
-* [Capítulo 05](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05): Trabajando ... (Estoy haciendo [hundir la flota](https://github.com/alemolamg/hundirLaFlotaDAW))
+* [Capítulo 04](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo04): No empezado.
+* [Capítulo 05](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05): Terminado, se está trabajando en [práctica optativa](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/optativo01). 
+  * [JuegoPistolero](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/juegoPistolero): Comenzado a realizar.
+
+
+ ... (Estoy haciendo [hundir la flota](https://github.com/alemolamg/hundirLaFlotaDAW))
