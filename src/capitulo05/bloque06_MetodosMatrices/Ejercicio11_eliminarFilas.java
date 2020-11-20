@@ -23,7 +23,11 @@ public class Ejercicio11_eliminarFilas {
 	 * @return	matriz sin la fila elegida.
 	 */
 	public static int[][] eliminarUnaFilaMatriz (int matriz[][], int filaEliminar){
-		int nuevaMatriz[][] = new int [matriz.length -1][matriz[0].length];
+		int nuevaMatriz[][];
+		if(filaEliminar < matriz.length)	//si filaEliminar es posible hace esto
+			 nuevaMatriz = new int [matriz.length -1][matriz[0].length];
+		else
+			nuevaMatriz = new int [matriz.length][matriz[0].length];	//para no salirse del rango hace esto
 		
 		for(int i = 0, k = 0; i < matriz.length; i++) {	
 			if(i != filaEliminar) {	//condición para no copiar la fila que no queremos
