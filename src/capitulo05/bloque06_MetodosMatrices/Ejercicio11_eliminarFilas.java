@@ -12,7 +12,7 @@ public class Ejercicio11_eliminarFilas {
 
 		UtilsAlemol.imprimirMatriz(matriz);	//imprimimos la matriz original
 
-		UtilsAlemol.imprimirMatriz(eliminarFilaMatriz(matriz, 2));	//imprimimos la matriz sin la fila
+		UtilsAlemol.imprimirMatriz(eliminarUnaFilaMatriz(matriz, 2));	//imprimimos la matriz sin la fila
 
 	}
 	
@@ -22,14 +22,13 @@ public class Ejercicio11_eliminarFilas {
 	 * @param filaEliminar
 	 * @return	matriz sin la fila elegida.
 	 */
-	public static int[][] eliminarFilaMatriz (int matriz[][], int filaEliminar){
-		int nuevaMatriz[][] = new int [matriz.length][matriz[0].length];
+	public static int[][] eliminarUnaFilaMatriz (int matriz[][], int filaEliminar){
+		int nuevaMatriz[][] = new int [matriz.length -1][matriz[0].length];
 		
-		for(int i = 0, k = 0; i < nuevaMatriz.length; i++) {	
+		for(int i = 0, k = 0; i < matriz.length; i++) {	
 			if(i != filaEliminar) {	//condición para no copiar la fila que no queremos
-				for (int j = 0, l = 0; j < nuevaMatriz[i].length; j++) {
-					nuevaMatriz[k][l] = matriz[i][j];  //copiamos la matriz
-					l++;
+				for (int j = 0; j < matriz[i].length; j++) {
+					nuevaMatriz[k][j] = matriz[i][j];  //copiamos la matriz
 				}
 			k++;
 			}
