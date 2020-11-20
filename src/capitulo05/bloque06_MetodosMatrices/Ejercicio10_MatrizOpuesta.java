@@ -26,7 +26,7 @@ public class Ejercicio10_MatrizOpuesta {
 		
 		for(int i = 0; i < opuesta.length; i++)
 			for (int j = 0; j < opuesta[i].length; j++)
-				opuesta[i][j] = -1 *  matriz[i][j];  //multiplicamos por -1 para conseguir la matriz opuesta
+				opuesta[i][j] = -1 * matriz[i][j];  //multiplicamos por -1 para conseguir la matriz opuesta
 		return opuesta;	
 	}
 
