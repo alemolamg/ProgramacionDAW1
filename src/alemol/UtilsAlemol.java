@@ -111,6 +111,19 @@ public class UtilsAlemol {
 		}
 	}
 	
+	/**
+	 * Recibe una matriz de enteros y la imprime por pantalla.
+	 * @param matriz
+	 */
+	public static void imprimirMatriz (char matriz [][]) {
+		System.out.println();
+		for(int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j <matriz[i].length; j++)
+				System.out.print(matriz[i][j] + " ");
+		System.out.println("");
+		}
+	}
+	
 	
 	/**
 	 * Crea una matriz dado el número de sus dos dimensiones
