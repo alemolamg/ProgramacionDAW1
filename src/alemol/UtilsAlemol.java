@@ -140,4 +140,12 @@ public class UtilsAlemol {
 	}
 	
 	
+	/**
+	 * obtienes un número al azar entre 0 y 1
+	 * @return	num (int) entre 0 y 100
+	 */
+	public static int obtenerBinarioAleatorio () {
+		 return (int) Math.round(Math.random() * 1);
+	}
+	
 }
