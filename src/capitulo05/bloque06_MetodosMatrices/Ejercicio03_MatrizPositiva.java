@@ -18,10 +18,10 @@ public class Ejercicio03_MatrizPositiva {
 		for(int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j <matriz[i].length; j++)
 				if(matriz[i][j] < 0)
-					return false;
+					return false;	// salimos si encuentra un número negativo, dado que ya no sería positiva.
 		}
-		return true;
 		
+		return true;	// devolvemos verdadero dado que no ha encontrado ningún número negativo.
 	}
 	
 	/**
