@@ -8,7 +8,6 @@ public class Ejercicio01_rellenaMatrizAlAzar {
 		
 		int tamanioCol = 3, tamanioFila = 3;
 		int matriz[][] = crearMatrizAlAzar(tamanioFila, tamanioCol);
-		
 		UtilsAlemol.imprimirMatriz(matriz);
 		
 	}
