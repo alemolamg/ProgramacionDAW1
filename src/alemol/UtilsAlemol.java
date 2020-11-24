@@ -61,8 +61,7 @@ public class UtilsAlemol {
 	 * @return int
 	 */
 	public static int obtenerEnteroScanner() {
-		Scanner sc = new Scanner(System.in);
-		return sc.nextInt();
+		return new Scanner(System.in).nextInt();
 	}
 	
 	
@@ -146,6 +145,12 @@ public class UtilsAlemol {
 	 */
 	public static int obtenerBinarioAleatorio () {
 		 return (int) Math.round(Math.random() * 1);
+	}
+	
+	
+	public static String leerStringScanner() {
+		Scanner sc = new Scanner(System.in);
+		return sc.next();
 	}
 	
 }
