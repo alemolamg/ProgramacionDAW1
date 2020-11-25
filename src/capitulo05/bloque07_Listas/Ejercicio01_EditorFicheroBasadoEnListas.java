@@ -112,7 +112,8 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	 */
 	public static void aniadirLineaAFichero(List<String> fichero) {
 		System.out.println("Introduce una fila de texto en el fichero: ");
-		aniadirLinea(fichero, UtilsAlemol.leerStringScanner());
+		String str = UtilsAlemol.leerStringScanner();
+		aniadirLinea(fichero, str);
 	}
 	
 	
@@ -122,10 +123,21 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	 * @param posicion
 	 */
 	public static void aniadirLineaAFicheroPosicion(List<String> fichero) {
-		int pos = numeroDentroFichero(fichero);		
-		System.out.println("Introduce una fila de texto en el fichero: ");
-		aniadirLinea(fichero, pos, UtilsAlemol.leerStringScanner());
+		int pos = numeroDentroFichero(fichero);
+		System.out.println("\nIntroduce una fila de texto en el fichero: ");
+		String str = UtilsAlemol.leerStringScanner();
+		aniadirLinea(fichero, pos, str);
 	}
+	
+	
+	
+	public static void editoFila(List<String> fichero) {	//Cambiar a boolean.
+		boolean conseguido = true;
+		
+		
+		
+	}
+	
 	
 	
 	/**
@@ -136,21 +148,30 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	public static int numeroDentroFichero(List<String> fichero) {
 		int pos=0;
 		do {		// se encarga de comprobar que el valor de la posición es válido
-			System.out.println("Introduce la posición, máximo " + fichero.size());
+			System.out.println("Introduce la posición, máximo " + (fichero.size()-1) );
 			pos = UtilsAlemol.obtenerEnteroScanner();
-			if (!(pos < fichero.size()))
+			if (!(pos < fichero.size()) )
 					System.out.println("el valor es incorrecto, tiene que ser menor que " + fichero.size());
 		}while(pos >= fichero.size());
 		return pos;
 	}
 	
 	
+	/**
+	 * Pregunta una fila y elimina la linea
+	 * @param fichero
+	 */
 	private static void eliminarPreguntandoFila(List<String> fichero) {
 		int posicion = numeroDentroFichero(fichero);
 		fichero.remove(posicion);
 	}
 	
 	
+	/**
+	 * elimina una fila a partir de la posición mandada
+	 * @param fichero
+	 * @param posicion
+	 */
 	private static void eliminarDadaFila (List<String> fichero, int posicion) {
 		fichero.remove(posicion);
 	}
