@@ -7,6 +7,7 @@ public class Ejercicio04_MatrizAsteriscos {
 	public static void main(String[] args) {
 		char matrizAst[][] = new char [20][10];
 		prepararMatriz(matrizAst);
+		aniadirValorMatriz(matrizAst);
 		UtilsAlemol.imprimirMatriz(matrizAst);
 
 	}
@@ -26,6 +27,13 @@ public class Ejercicio04_MatrizAsteriscos {
 					matriz[i][0] = '*';
 					matriz[i][matriz[i].length-1] = '*';
 				}		
+	}
+	
+	
+	private static void aniadirValorMatriz(char matriz [][]) {
+		int altI = UtilsAlemol.obtenerNumeroAzar(1, matriz.length-2),
+			altJ = UtilsAlemol.obtenerNumeroAzar(1, matriz[0].length -2);
+		matriz[altI][altJ] = Character.forDigit(0, 2);
 	}
 
 }
