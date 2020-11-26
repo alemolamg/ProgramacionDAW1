@@ -8,7 +8,7 @@ Todo el contenido creado por mí (Alemol) para la asignatura de programación, s
 * [Capítulo 03](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo03): Terminado
 * [Capítulo 04](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo04): No empezado.
 * [Capítulo 05](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05): Terminado.
-  * Terminada Práctica optativa:[práctica optativa](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/optativo01). 
+  * [práctica optativa](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/optativo01): Terminada.
   * [JuegoPistolero](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/juegoPistolero): Comenzado a realizar.
 
 
