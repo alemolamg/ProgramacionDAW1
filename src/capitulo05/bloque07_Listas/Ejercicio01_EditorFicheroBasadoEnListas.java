@@ -50,7 +50,7 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 				aniadirLineaAFicheroPosicion(fichero);
 				break;
 			case 3:
-				
+				editarLinea(fichero);
 				break;
 			case 4:
 				eliminarPreguntandoFila(fichero);
@@ -192,5 +192,21 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	private static void aniadirLinea(List<String> lista,int pos, String linea) {
 		lista.add(pos,linea);
 	}
+	
+	
+	private static void editarLinea(List<String> fichero) {
+		System.out.println("¿Qué linea quieres modificar?: ");
+		int lineaCambiar = numeroDentroFichero(fichero);
+		
+		System.out.println("Linea original = '" + fichero.get(lineaCambiar) + "'");
+		System.out.println("Introduce la linea nueva: ");
+		String textoNuevo = UtilsAlemol.leerStringScanner();
+		
+		eliminarDadaFila(fichero, lineaCambiar);
+		aniadirLinea(fichero, lineaCambiar, textoNuevo);
+		
+	}
+		
+	
 	
 }
