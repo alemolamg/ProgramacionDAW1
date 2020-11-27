@@ -161,7 +161,7 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 		System.out.println("¿En qué posición quieres añadir el portapapeles? ");
 		int pos = numeroDentroFichero(fichero);
 		
-		for (int i = porta.size()-1; i >= 0; i++) {
+		for (int i = porta.size()-1; i >= 0; i--) {
 			fichero.add(pos, porta.get(i));
 			porta.remove(i);
 		}
