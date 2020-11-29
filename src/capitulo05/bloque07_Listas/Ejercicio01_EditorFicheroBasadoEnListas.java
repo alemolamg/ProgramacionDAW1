@@ -2,6 +2,8 @@ package capitulo05.bloque07_Listas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 import alemol.UtilsAlemol;
 
 public class Ejercicio01_EditorFicheroBasadoEnListas {
@@ -29,6 +31,7 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 		// Declaro variables necesarias
 		int opcion;
 		List<String> fichero = new ArrayList<String>();
+		List<String> portapapeles = new ArrayList<String>();
 		
 		// Inicializo algo de contenido en la lista. Esto debe eliminarse cuando el programa esté finalizado
 		fichero.add("Primera línea"); fichero.add("Segunda línea"); fichero.add("Tercera línea");
@@ -56,8 +59,10 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 				eliminarPreguntandoFila(fichero);
 				break;
 			case 5: 
+				cortarAPorta(fichero, portapapeles);
 				break;
 			case 6:
+				pegarDePorta(fichero, portapapeles);
 				break;
 			case 7: // Ha elegido visualizar el fichero
 				visualizaLista(fichero);
@@ -112,7 +117,7 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	 */
 	public static void aniadirLineaAFichero(List<String> fichero) {
 		System.out.println("Introduce una fila de texto en el fichero: ");
-		String str = UtilsAlemol.leerStringScanner();
+		String str = leerStringScanner();
 		aniadirLinea(fichero, str);
 	}
 	
@@ -125,7 +130,7 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	public static void aniadirLineaAFicheroPosicion(List<String> fichero) {
 		int pos = numeroDentroFichero(fichero);
 		System.out.println("\nIntroduce una fila de texto en el fichero: ");
-		String str = UtilsAlemol.leerStringScanner();
+		String str = leerStringScanner();
 		aniadirLinea(fichero, pos, str);
 	}
 	
@@ -134,10 +139,34 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 	public static void editoFila(List<String> fichero) {	//Cambiar a boolean.
 		boolean conseguido = true;
 		
-		
-		
 	}
 	
+	
+	private static void cortarAPorta(List<String> fichero, List<String> portapapeles) {
+		System.out.println("Introduce el número menor del rango: ");
+		int numInicial = numeroDentroFichero(fichero);		//TODO: cambiar por el verificador de dentro fichero
+		System.out.println("Introduce el número mayor del rango: ");
+		int numFinal = numeroDentroFichero(fichero);
+		
+		for (int i = numInicial; i <= numFinal; i++) {
+			portapapeles.add(fichero.get(numInicial));
+			fichero.remove(numInicial);
+		}
+		System.out.println("Cortado Completado");
+	}
+	
+	
+	
+	private static void pegarDePorta(List<String> fichero, List<String> porta) {
+		System.out.println("¿En qué posición quieres añadir el portapapeles? ");
+		int pos = numeroDentroFichero(fichero);
+		
+		for (int i = porta.size()-1; i >= 0; i--) {
+			fichero.add(pos, porta.get(i));
+			porta.remove(i);
+		}
+		System.out.println("Pegado Completado");
+	}
 	
 	
 	/**
@@ -149,10 +178,10 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 		int pos=0;
 		do {		// se encarga de comprobar que el valor de la posición es válido
 			System.out.println("Introduce la posición, máximo " + (fichero.size()-1) );
-			pos = UtilsAlemol.obtenerEnteroScanner();
+			pos = UtilsAlemol.obtenerEnteroScanner();	//Pedimos el valor que queremos leer
 			if (!(pos < fichero.size()) )
 					System.out.println("el valor es incorrecto, tiene que ser menor que " + fichero.size());
-		}while(pos >= fichero.size());
+		}while(pos >= fichero.size() || pos < 0);
 		return pos;
 	}
 	
@@ -207,6 +236,13 @@ public class Ejercicio01_EditorFicheroBasadoEnListas {
 		
 	}
 		
+	
+	public static String leerStringScanner() {
+		Scanner sc = new Scanner(System.in);
+//		sc.useDelimiter("\n");
+		String linea = sc.nextLine();
+		return linea;
+	}
 	
 	
 }

@@ -150,6 +150,7 @@ public class UtilsAlemol {
 	
 	public static String leerStringScanner() {
 		Scanner sc = new Scanner(System.in);
+		sc.useDelimiter("\n");
 		return sc.next();
 	}
 	
