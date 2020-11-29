@@ -136,7 +136,7 @@ public class Ejercicio02_listaEnteros {
 			limiteSup = aux;
 		}
 		
-		if((lista.size() < 1 )) {		// si ya está iniciado, elegimos la posición donde empezamos a añadir los números.
+		if(!(lista.isEmpty() )) {		// si ya está iniciado, elegimos la posición donde empezamos a añadir los números.
 			System.out.println("Introduce posición de comienzo");
 			pos = leerIntScanner();
 		}
