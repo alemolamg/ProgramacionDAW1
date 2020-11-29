@@ -1,5 +1,6 @@
 package capitulo05.bloque07_Listas;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ public class Ejercicio02_listaEnteros {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 int opcion = 6;
-;		List<Integer> listaEnteros;
+		List<Integer> listaEnteros = new ArrayList<Integer>();
 		
 		do {
 			// Llamo a mostrar el menú y pedir una opción al usuario.
@@ -28,15 +29,12 @@ public class Ejercicio02_listaEnteros {
 				multiplesFunciones(listaEnteros);
 				break;
 			case 3:
-				editarLinea(listaEnteros);
+				rellenarListaAlAzar(listaEnteros);
 				break;
 			case 4:
-				eliminarPreguntandoFila(listaEnteros);
+				eliminarEntreIntervalo(listaEnteros);
 				break;
 			case 5: 
-				cortarAPorta(listaEnteros, portapapeles);
-				break;
-			case 6:
 				// Ha elegido visualizar el fichero
 				visualizaLista(listaEnteros);
 				break;
@@ -61,8 +59,7 @@ public class Ejercicio02_listaEnteros {
 				+ "\n2.- Calcular suma, media, mayor y menor"
 				+ "\n3.- Agregar una cantidad de nuevos valores"
 				+ "\n4.- Eliminar elementos cuyo valor esté en un intervalo"
-				+ "\n5.-Imprimir la lista"
-				+ "\n6.- Visualizar el fichero"
+				+ "\n5.- Imprimir la lista"
 				+ "\n\nIntroduzca su opción: ";
 		// Muestro el menú
 		System.out.println(strMenu);
@@ -78,10 +75,44 @@ public class Ejercicio02_listaEnteros {
 	 * @param lista
 	 */
 	public static void visualizaLista (List<Integer> lista) {
-		System.out.println("\n\nContenido del fichero");
+		System.out.println("\n\nContenido de la lista");
 		for (int i = 0; i < lista.size(); i++) {
-			System.out.println("\t" + i + " - " + lista.get(i));
+			System.out.println("\tPos " + i + " - " + lista.get(i));
 		}
+	}
+	
+	
+	
+	public static void eliminarEntreIntervalo(List<Integer> lista) {
+		int longitud = 0, limiteInf = 0, limiteSup = 100, pos = 0;
+		System.out.println("Elige el número mínimo: ");				// Pedimos el número mínimo
+		limiteInf = leerIntScanner();
+		System.out.println("Elige el número máximo: ");				// Pedimos el número máximo
+		limiteSup = leerIntScanner();	
+		
+		if (limiteInf > limiteSup) { 	// Coloca correctamente las variables.
+			int aux = limiteInf;
+			limiteInf = limiteSup;
+			limiteSup = aux;
+		}
+		
+		System.out.println("Se han eliminado " + eliminarEntreNum(lista, limiteInf, limiteSup) 
+							+ " números de la lista" );
+	}
+	
+	
+	private static int eliminarEntreNum(List<Integer> lista, int min, int max) {
+		int cant = 0, i = 0;
+		do {
+			if(lista.get(i)<= max && lista.get(i) >= min) {
+				cant++;
+				lista.remove(i);
+			} else
+				i++;
+			
+		}while (i < lista.size());
+		
+		return cant;
 	}
 	
 	
@@ -91,7 +122,7 @@ public class Ejercicio02_listaEnteros {
 	 * @param lista
 	 */
 	public static void rellenarListaAlAzar(List<Integer> lista){
-		int longitud = 0, limiteInf = 0, limiteSup = 100;
+		int longitud = 0, limiteInf = 0, limiteSup = 100, pos = 0;
 		System.out.println("¿Cuantos valores quieres generar?");	//Pedimos la longitud de la lista
 		longitud = leerIntScanner();
 		System.out.println("Elige el número mínimo: ");				// Pedimos el número mínimo
@@ -99,14 +130,19 @@ public class Ejercicio02_listaEnteros {
 		System.out.println("Elige el número máximo: ");				// Pedimos el número máximo
 		limiteSup = leerIntScanner();	
 		
-		if (limiteInf > limiteSup) { 
+		if (limiteInf > limiteSup) { 	// Coloca correctamente las variables.
 			int aux = limiteInf;
 			limiteInf = limiteSup;
 			limiteSup = aux;
 		}
 		
-		for (int i = 0; i < longitud; i++) 
-			lista.add(obtenerNumeroAzar(limiteInf, limiteSup));		// Recorremos la lista añadiendo los elementos correspondientes
+		if((lista.size() < 1 )) {		// si ya está iniciado, elegimos la posición donde empezamos a añadir los números.
+			System.out.println("Introduce posición de comienzo");
+			pos = leerIntScanner();
+		}
+			
+		for (; pos < longitud; pos++) 
+			lista.add(pos,obtenerNumeroAzar(limiteInf, limiteSup));		// Recorremos la lista añadiendo los elementos correspondientes
 	}
 	
 	
