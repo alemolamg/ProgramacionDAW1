@@ -37,7 +37,7 @@ public class CromoBaloncesto {
 	
 	
 	public String toString () {
-		return (nombreJugador +";"+ alturaCm +";"+ pesoKg +";"+ puntosMedioPorPartido );
+		return (nombreJugador +"; "+ alturaCm +"; "+ pesoKg +"; "+ puntosMedioPorPartido );
 	}
 
 

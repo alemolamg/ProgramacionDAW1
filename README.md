@@ -9,7 +9,7 @@ Todo el contenido creado por mí (Alemol) para la asignatura de programación, s
 * [Capítulo 04](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo04): No empezado.
 * [Capítulo 05](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05): Terminado.
   * [práctica optativa](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/optativo01): Terminada.
-  * [JuegoPistolero](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/juegoPistolero): Comenzado a realizar.
+  * [JuegoPistolero](https://github.com/alemolamg/ProgramacionDAW1/tree/master/src/capitulo05/juegoPistolero): En pausa
 
 
- ... (Estoy haciendo [hundir la flota](https://github.com/alemolamg/hundirLaFlotaDAW))
+ ... (Proyecto en pausa [hundir la flota](https://github.com/alemolamg/hundirLaFlotaDAW))
