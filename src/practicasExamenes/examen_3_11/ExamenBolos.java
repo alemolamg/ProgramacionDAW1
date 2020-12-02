@@ -10,6 +10,9 @@ public class ExamenBolos {
 		valorBolos(bolos, 1);
 		presentacionBolos();
 		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
 		int valor = 1, puntos = 0, puntuaje = 20;
 		boolean terminado = false;
 		
@@ -205,5 +208,24 @@ public class ExamenBolos {
 		return new Scanner(System.in).nextInt();
 	}
 	
+	
 
+}
+
+
+class Jugador {
+//	String nombre = jugador1;
+	int puntos = 0;
+	int bolosTirados = 0;
+	boolean jugando = true;
+	
+	// Métodos jugador
+	
+	public Jugador() { }
+	
+	public Jugador(int puntuacion, int bolosTirados, boolean jugando) {
+		this.puntos = puntuacion;
+		this.bolosTirados = bolosTirados;
+		this.jugando = jugando;
+	}	
 }
