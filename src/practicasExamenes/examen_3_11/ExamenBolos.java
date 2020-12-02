@@ -1,6 +1,5 @@
 package practicasExamenes.examen_3_11;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ExamenBolos {
@@ -13,46 +12,37 @@ public class ExamenBolos {
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
-		
-		int valorMenu = 1, ronda = 0, puntaje = 20;
+		int ronda = 0;
 		boolean jugando = true;
 		
 		Jugador arrayJugador[] = new Jugador[2];
-		
+		arrayJugador[0] = jugador1;
+		arrayJugador[1] = jugador2;
 		
 	do {
 		jugando = false;
 		for (int i = 0; i < arrayJugador.length; i++) {
+			System.out.println("Turno jugador" + i);
 			if (arrayJugador[i].jugando) {
 				jugando = true;
+				jugadaJugador(ronda, arrayJugador[i]);
 			}
 		}
 		
-//			
-//			mostrarBolosPantalla(bolos);			
-//			valorMenu = miniMenu();
-//			
-//			if (valorMenu == 1){
-//				puntaje = puntaje/2;
-//				puntos = lanzarBola(bolos,puntos,puntaje);
-//				System.out.println("Puntos tirada = " + puntos);
-//				
-//				if (calcularBolosDerribados(bolos) == 10) {
-//					System.out.println("¡Ya están derribados todos los bolos!");
-//					terminado = true;
-//				}
-//			} else
-//				terminado = true;
-//			
+		ronda++;
+
 	}while (!jugando);
-		
-//		System.out.println("PUNTOS = " + puntos);
-//		mostrarPuntuacion(bolos, puntos);
-		
-	}
 	
+	calcularGanador(arrayJugador);		
+}
 	
-	public static void jugadaJugador (int ronda, Jugador jugadorActual, int pos) {
+	/**
+	 * Metodo que realiza la jugada de un jugador.
+	 * @param ronda
+	 * @param jugadorActual
+	 * @param pos
+	 */
+	public static void jugadaJugador (int ronda, Jugador jugadorActual) {
 		mostrarBolosPantalla(jugadorActual.bolos);			
 		int valorMenu = miniMenu();
 		
@@ -72,6 +62,11 @@ public class ExamenBolos {
 	}
 	
 	
+	/**
+	 * Muestra la puntuación dado un array y la puntuación.
+	 * @param array
+	 * @param puntuacion
+	 */
 	public static void mostrarPuntuacion(int array[], int puntuacion) {
 		System.out.println("\nHa terminado el juego");
 		System.out.println("Has derribado un total de " + calcularBolosDerribados(array) + " bolos");
@@ -79,7 +74,39 @@ public class ExamenBolos {
 	}
 	
 	
-	public static int  miniMenu () {
+	public static void calcularGanador (Jugador vectorJugador []) {
+		int pos = 0;
+		
+		for (int i = 1; i < vectorJugador.length; i++) {
+			mostrarPuntuacion(vectorJugador[i]);
+			if(vectorJugador[i].puntos > vectorJugador[pos].puntos)
+				pos = i;
+		}
+		
+		System.out.println("El jugador ganador es el jugador" + pos + 
+						" con " + vectorJugador[pos].puntos + " puntos." );
+		
+	}
+	
+	
+	/**
+	 * Muestra la puntuación dado un array y la puntuación.
+	 * @param array
+	 * @param puntuacion
+	 */
+	public static void mostrarPuntuacion(Jugador jugador) {
+		System.out.println("\nHa terminado el juego");
+		System.out.println("Has derribado un total de " + calcularBolosDerribados(jugador.bolos) + " bolos");
+		System.out.println("Tu puntuación final es: " + jugador.puntos);
+	}
+	
+	
+	
+	/**
+	 * 
+	 * @return devuelve la opción 
+	 */
+	public static int miniMenu () {
 		System.out.println("¿Que quieres hacer ?");
 		System.out.println("0 - Salir del juego");
 		System.out.println("1 - Lanzar otra bola");
@@ -117,6 +144,13 @@ public class ExamenBolos {
 		System.out.println("\n");		
 	}
 	
+	
+	
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	private static int calcularBolosDerribados(int array []) {
 		int bolosDerribados = 0;
 		for (int i = 0; i < array.length; i++) {
