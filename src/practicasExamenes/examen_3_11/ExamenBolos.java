@@ -1,43 +1,74 @@
 package practicasExamenes.examen_3_11;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ExamenBolos {
 
 	public static void main(String[] args) {
 		
-		int bolos [] = new int [10];
-		valorBolos(bolos, 1);
-		presentacionBolos();
+//		int bolos [] = new int [10];
+//		valorBolos(bolos, 1);
+//		presentacionBolos();
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
 		
-		int valor = 1, puntos = 0, puntuaje = 20;
-		boolean terminado = false;
+		int valorMenu = 1, ronda = 0, puntaje = 20;
+		boolean jugando = true;
 		
-		do {
-			
-			mostrarBolosPantalla(bolos);			
-			valor = miniMenu();
-			
-			if (valor == 1){
-				puntuaje = puntuaje/2;
-				puntos = lanzarBola(bolos,puntos,puntuaje);
-				System.out.println("Puntos tirada = " + puntos);
-				
-				if (calcularBolosDerribados(bolos) == 10) {
-					System.out.println("¡Ya están derribados todos los bolos!");
-					terminado = true;
-				}
-			} else
-				terminado = true;
-			
-		}while (!terminado);
+		Jugador arrayJugador[] = new Jugador[2];
 		
-		System.out.println("PUNTOS = " + puntos);
-		mostrarPuntuacion(bolos, puntos);
 		
+	do {
+		jugando = false;
+		for (int i = 0; i < arrayJugador.length; i++) {
+			if (arrayJugador[i].jugando) {
+				jugando = true;
+			}
+		}
+		
+//			
+//			mostrarBolosPantalla(bolos);			
+//			valorMenu = miniMenu();
+//			
+//			if (valorMenu == 1){
+//				puntaje = puntaje/2;
+//				puntos = lanzarBola(bolos,puntos,puntaje);
+//				System.out.println("Puntos tirada = " + puntos);
+//				
+//				if (calcularBolosDerribados(bolos) == 10) {
+//					System.out.println("¡Ya están derribados todos los bolos!");
+//					terminado = true;
+//				}
+//			} else
+//				terminado = true;
+//			
+	}while (!jugando);
+		
+//		System.out.println("PUNTOS = " + puntos);
+//		mostrarPuntuacion(bolos, puntos);
+		
+	}
+	
+	
+	public static void jugadaJugador (int ronda, Jugador jugadorActual, int pos) {
+		mostrarBolosPantalla(jugadorActual.bolos);			
+		int valorMenu = miniMenu();
+		
+		if (valorMenu == 1){
+			jugadorActual.bolosUltimaTirada = lanzarBola(jugadorActual);
+			System.out.println("Puntos tirada = " + 
+					calcularPuntosTirada(jugadorActual.bolosUltimaTirada, ronda));
+			
+			jugadorActual.puntos += calcularPuntosTirada(jugadorActual.bolosUltimaTirada, ronda);
+			
+			if (jugadorActual.bolosTirados >= 10) {
+				System.out.println("¡Ya están derribados todos los bolos!");
+				jugadorActual.jugando = false;
+			}
+		} else
+			jugadorActual.jugando = false;
 	}
 	
 	
@@ -99,23 +130,44 @@ public class ExamenBolos {
 	 * 
 	 * @param array
 	 * @param puntos
-	 * @param puntuaje
 	 * @return
 	 */
-	public static int lanzarBola(int array[], int puntos, int puntuaje) {
+	public static int lanzarBola(int array[], int puntos) {
 		int bolosDerribados = 0, limite = 50;
-//		boolean todosDerribados = true;
 		
 		for (int i = 0; i < array.length; i++)
 			if(array[i] != 0) { 
-//				todosDerribados = false;
 				if (obtenerNumeroAzar100() < limite) {
 					array[i] = 0;
 					bolosDerribados++;
 				}
 			}
 		
-		return puntos + (bolosDerribados * puntuaje);
+//		return puntos + (bolosDerribados * puntuaje);
+		return bolosDerribados;
+	}
+	
+	
+	
+	public static int lanzarBola(Jugador juActual) {
+		int bolosDerribados = 0, limite = 50;
+		
+		for (int i = 0; i < juActual.bolos.length; i++)
+			if(juActual.bolos[i] != 0) { 
+				if (obtenerNumeroAzar100() < limite) {
+					juActual.bolos[i] = 0;
+					bolosDerribados++;
+				}
+			}
+		
+		juActual.bolosTirados += bolosDerribados;
+		return bolosDerribados;
+	}
+	
+	
+	
+	private static int calcularPuntosTirada (int bolosDerribados, int ronda) {
+		return (int) (bolosDerribados * (10 * Math.pow(2, ronda) ));	
 	}
 	
 	
@@ -214,18 +266,38 @@ public class ExamenBolos {
 
 
 class Jugador {
-//	String nombre = jugador1;
+
+	int bolos[] = new int [10];
 	int puntos = 0;
 	int bolosTirados = 0;
+	int bolosUltimaTirada = 0;
 	boolean jugando = true;
 	
 	// Métodos jugador
 	
 	public Jugador() { }
 	
-	public Jugador(int puntuacion, int bolosTirados, boolean jugando) {
+	public Jugador(int puntuacion, int bolosTirados, int ultimaTirada, boolean jugando) {
 		this.puntos = puntuacion;
 		this.bolosTirados = bolosTirados;
+		this.bolosUltimaTirada = ultimaTirada;
 		this.jugando = jugando;
+		this.bolos = valorTodosLosBolos(0);
 	}	
+	
+	
+	/**
+	 * Añade un valor a todos los valores del array
+	 * @param array	(int [])
+	 * @param valor (int)
+	 */
+	private int[] valorTodosLosBolos (int valor) {
+		int array[] = new int [10];
+		for (int i = 0; i < array.length; i++) 
+			array[i] = valor;
+		return array;
+	}
+	
+	
+	
 }
