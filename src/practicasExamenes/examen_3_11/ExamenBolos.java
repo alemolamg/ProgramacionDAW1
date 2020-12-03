@@ -8,7 +8,7 @@ public class ExamenBolos {
 		
 //		int bolos [] = new int [10];
 //		valorBolos(bolos, 1);
-//		presentacionBolos();
+		presentacionBolos();	//TODO hola
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
@@ -22,7 +22,7 @@ public class ExamenBolos {
 	do {
 		jugando = false;
 		for (int i = 0; i < arrayJugador.length; i++) {
-			System.out.println("Turno jugador" + i);
+			System.out.println("Turno jugador" + (i+1));
 			if (arrayJugador[i].jugando) {
 				jugando = true;
 				jugadaJugador(ronda, arrayJugador[i]);
@@ -309,14 +309,14 @@ class Jugador {
 	
 	// Métodos jugador
 	
-	public Jugador() { }
+	public Jugador() { this.bolos = valorTodosLosBolos(1); }
 	
 	public Jugador(int puntuacion, int bolosTirados, int ultimaTirada, boolean jugando) {
 		this.puntos = puntuacion;
 		this.bolosTirados = bolosTirados;
 		this.bolosUltimaTirada = ultimaTirada;
 		this.jugando = jugando;
-		this.bolos = valorTodosLosBolos(0);
+		this.bolos = valorTodosLosBolos(1);
 	}	
 	
 	
