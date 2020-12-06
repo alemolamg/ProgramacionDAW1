@@ -1,4 +1,4 @@
-package practicasExamenes.examen_3_11;
+package simulacionExamenes.examenBolos;
 
 import java.util.Scanner;
 
