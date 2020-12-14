@@ -3,6 +3,7 @@ package simulacionExamenes.barajaDeCartas;
 public class Baraja {
 	//	Atributos
 	private Carta[] cartas = new Carta[52];
+	private int cartasRepartidas = 0;
 	
 	//	Métodos
 
@@ -12,22 +13,22 @@ public class Baraja {
 	public Baraja() {
 		int idCarta = 0;
 		for(int i = 1; i <=13; i++) {
-			cartas[i] = new Carta(i, "picas", idCarta);
+			cartas[idCarta] = new Carta(i, "picas", idCarta);
 			idCarta++;
 		}
 		
 		for(int i = 1; i <= 13; i++) {
-			cartas[i] = new Carta(i, "diamantes", idCarta);
+			cartas[idCarta] = new Carta(i, "diamantes", idCarta);
 			idCarta++;
 		}
 		
 		for(int i = 1; i <= 13; i++) {
-			cartas[i] = new Carta(i, "tréboles", idCarta);
+			cartas[idCarta] = new Carta(i, "tréboles", idCarta);
 			idCarta++;
 		}
 		
 		for(int i = 1; i <= 13; i++) {
-			cartas[i] = new Carta(i, "corazones", idCarta);
+			cartas[idCarta] = new Carta(i, "corazones", idCarta);
 			idCarta++;
 		}		
 	}
@@ -61,8 +62,11 @@ public class Baraja {
 	}
 	
 	
+	/**
+	 * Mezcla las cartas de la baraja
+	 */
 	public void mezclar() {
-		for (int i = 0; i < cartas.length; i++) {
+		for (int i = 0; i < cartas.length/2; i++) {
 			int primerIndice = (int) Math.round(Math.random() * cartas.length);
 			int SegundoIndice = (int) Math.round(Math.random() * cartas.length);
 			
@@ -71,6 +75,26 @@ public class Baraja {
 			cartas[SegundoIndice] = aux;
 		}
 	}
+	
+	
+	/**
+	 * Ordena la baraja de cartas
+	 */
+	public void ordenar() {
+		
+	}
+	
+	
+	public void repartir(Jugador vectorJugadores[]) {
+		for (int i = 0; i < vectorJugadores.length;i++) {
+			for (int j = 0; j < vectorJugadores[i].getMano().length; j++) {
+				vectorJugadores[i].getMano()[j] = cartas[i - this.cartasRepartidas];
+				cartasRepartidas++;
+			}
+		}
+	}
+	
+	
 	
 	
 	
