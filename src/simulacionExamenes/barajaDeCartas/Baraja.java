@@ -1,5 +1,7 @@
 package simulacionExamenes.barajaDeCartas;
 
+import java.util.Arrays;
+
 public class Baraja {
 	//	Atributos
 	private Carta[] cartas = new Carta[52];
@@ -11,6 +13,7 @@ public class Baraja {
 	 * 
 	 */
 	public Baraja() {
+		this.cartasRepartidas = 0;
 		int idCarta = 0;
 		for(int i = 1; i <=13; i++) {
 			cartas[idCarta] = new Carta(i, "picas", idCarta);
@@ -81,17 +84,39 @@ public class Baraja {
 	 * Ordena la baraja de cartas
 	 */
 	public void ordenar() {
-		
+		Carta auxiliar;
+        boolean intercambio = false;
+
+        do {
+            intercambio = false;
+            for (int i = 0; i < cartas.length - 1; i++)
+                if (cartas[i].getId() > cartas[i + 1].getId()) { // Comparamos IDs
+                    auxiliar = cartas[i + 1]; // Guardamos valor en auxiliar
+                    cartas[i + 1] = cartas[i]; // Realizamos intercambio
+                    cartas[i] = auxiliar;
+                    intercambio = true;
+                }
+
+        } while (intercambio); // Saldremos del bucle cuando no haya intercambios
 	}
 	
 	
-	public void repartir(Jugador vectorJugadores[]) {
-		for (int i = 0; i < vectorJugadores.length;i++) {
-			for (int j = 0; j < vectorJugadores[i].getMano().length; j++) {
-				vectorJugadores[i].getMano()[j] = cartas[i - this.cartasRepartidas];
-				cartasRepartidas++;
+	/**
+	 * Método que reparte cartas a todos los jugadores.
+	 * @param jugador
+	 */
+	public void repartir(Jugador jugador) {
+			for (int j = 0; j < jugador.getMano().length; j++) {
+				jugador.getMano()[j] = cartas[cartasRepartidas];
+				this.cartasRepartidas++;
 			}
-		}
+			jugador.jugada();
+	}
+
+
+	@Override
+	public String toString() {
+		return "Baraja [cartas=" + Arrays.toString(cartas) + ", cartasRepartidas=" + cartasRepartidas + "]";
 	}
 	
 	

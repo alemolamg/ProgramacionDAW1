@@ -27,7 +27,7 @@ public class Carta {
 
 
 	public String toString() {
-		return "Carta [numero=" + numero + ", palo=" + palo + ", id=" + id + "]";
+		return "\nCarta [numero=" + numero + ", palo=" + palo + ", id=" + id + "]";
 	}
 
 

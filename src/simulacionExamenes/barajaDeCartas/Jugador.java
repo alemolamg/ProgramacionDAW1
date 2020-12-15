@@ -24,6 +24,15 @@ public class Jugador {
 	}
 	
 	
+	/**
+	 * @param nombre
+	 */
+	public Jugador(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Jugador [mano=" + Arrays.toString(mano) + ", nombre=" + nombre + "]";
@@ -61,7 +70,50 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 	
-		
+	
+	/**
+	 * @return maximo de repeticiones de cartas.
+	 */
+	public int verificarPuntosMano () {
+		int maximoPuntos = 1;
+		for (int i = 0; i < mano.length-1; i++) {
+			int contador = 1;
+			for (int j = i+1; j < mano.length; j++) {
+				if(mano[i].getNumero() == mano[j].getNumero())
+					contador++;
+			}
+			if(contador > maximoPuntos)
+				maximoPuntos = contador;
+		}
+		return maximoPuntos;
+	}
+	
+	
+	public void jugada() {
+		switch (verificarPuntosMano()) {
+		case 1:
+			System.out.println("Soy el " + this.nombre + " y tengo solo carta alta");
+			break;
+		case 2:
+			System.out.println("Soy el " + this.nombre + " y tengo"
+					+ " una pareja");
+			break;
+		case 3:
+			System.out.println("Soy el " + this.nombre + " y tengo "
+					+ "un trio");
+			break;
+		case 4:
+			System.out.println("Soy el " + this.nombre + " y tengo"
+					+ " un poker");
+			break;
+		case 5: 
+			System.out.println("Soy el " + this.nombre + " y estoy haciendo trampa"
+					+ " o algo falla porque no puedo tener 5 cartas iguales.");
+		default:
+			System.out.println("no tengo nada");
+			break;
+		}
+	}
 	
 	
 	
