@@ -4,11 +4,19 @@ public class Personaje {
 	//	Atributos
 	private int puntosVida;
 	private String nombre;
-	private boolean vivo = true;
+	private boolean vivo;
 	
 	//	Métodos
 	public Personaje() {
 		this.puntosVida = 50 + (int) Math.round(Math.random() * 50);	// 50 puntos iniciales + random(50)
+		this.nombre = "Personaje Jugable";
+		this.vivo = true;
+	}
+	
+	public Personaje(String nombre) {
+		this.puntosVida = 50 + (int) Math.round(Math.random() * 50);	// 50 puntos iniciales + random(50)
+		this.nombre = nombre;
+		this.vivo = true;
 	}
 
 	/**
@@ -42,7 +50,7 @@ public class Personaje {
 	/**
 	 * @return the vivo
 	 */
-	public boolean isVivo() {
+	public boolean getVivo() {
 		return vivo;
 	}
 
