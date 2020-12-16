@@ -71,11 +71,11 @@ public class Baraja {
 	public void mezclar() {
 		for (int i = 0; i < cartas.length/2; i++) {
 			int primerIndice = (int) Math.round(Math.random() * cartas.length);
-			int SegundoIndice = (int) Math.round(Math.random() * cartas.length);
+			int segundoIndice = (int) Math.round(Math.random() * cartas.length);
 			
 			Carta aux = cartas[primerIndice];
-			cartas[primerIndice] = cartas[SegundoIndice];
-			cartas[SegundoIndice] = aux;
+			cartas[primerIndice] = cartas[segundoIndice];
+			cartas[segundoIndice] = aux;
 		}
 	}
 	
