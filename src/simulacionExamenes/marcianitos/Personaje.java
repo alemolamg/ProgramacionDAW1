@@ -5,6 +5,7 @@ public class Personaje {
 	private int puntosVida;
 	private String nombre;
 	private boolean vivo;
+	private int dispRecibidos = 0;
 	
 	//	Métodos
 	public Personaje() {
@@ -62,5 +63,27 @@ public class Personaje {
 	}
 	
 	
+	public int getDispRecibidos() {
+		return dispRecibidos;
+	}
+
+	public void setDispRecibidos(int dispRecibidos) {
+		this.dispRecibidos = dispRecibidos;
+	}
+
+	public void disparar(Personaje enemigo) {
+		int disparo = 5 + (int) Math.round(Math.random() * 20);
+		enemigo.setPuntosVida(enemigo.getPuntosVida() - disparo);
+		enemigo.dispRecibidos++;
+		enemigo.comprobarVida();		
+	}
+	
+	/**
+	 * Comprueba si le queda vida al personaje
+	 */
+	public void comprobarVida() {
+		if(this.puntosVida <= 0)
+			this.vivo = false;
+	}
 	
 }
