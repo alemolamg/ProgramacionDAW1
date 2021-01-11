@@ -89,6 +89,20 @@ public class Jugador {
 	}
 	
 	
+	public void nuevoLectorPuntos() {
+		int i = 0, contador = 0;
+		do {
+			for (int j = i+1; j < mano.length; j++) {
+				if(mano[i].getNumero() == mano[j].getNumero())
+					contador++;
+			}
+			
+		}while(i < mano.length);
+		
+		
+	}
+	
+	
 	public void jugada() {
 		switch (verificarPuntosMano()) {
 		case 1:
