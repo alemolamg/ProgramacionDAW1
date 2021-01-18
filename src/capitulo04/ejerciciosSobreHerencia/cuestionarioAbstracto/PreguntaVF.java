@@ -1,24 +1,25 @@
 package capitulo04.ejerciciosSobreHerencia.cuestionarioAbstracto;
 
 public class PreguntaVF extends Pregunta {
-
-	public PreguntaVF(String textoPre, String respuesta) {
-		super(textoPre, respuesta);
-	}
 	
+	private String respuestaCorrecta;
 	
-	@Override
-	public boolean verificarRespuesta(String respuesta) {
-		if (this.respuesta == respuesta)
-			return true;
-		return false;
+	public PreguntaVF(String textoPre, String correcta) {
+		super(textoPre);
+		this.respuestaCorrecta = correcta;
 	}
 	
 	@Override
 	public void mostrarPregunta() {
-		System.out.println(this.textoPre);
-		
+		System.out.println("\n" + this.textoPre + "\n Elige la respuesta 'V' o 'F' : \n");
+		this.leerRespuestaUsuario();
 	}
 	
+	@Override
+	public boolean verificarRespuesta() {
+		if (this.usuarioRespuesta.equalsIgnoreCase(this.usuarioRespuesta))
+			return true;
+		return false;
+	}
 	
 }
