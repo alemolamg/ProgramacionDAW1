@@ -2,19 +2,22 @@ package capitulo04.ejerciciosSobreHerencia.circuitoElectronico;
 
 public class Componente {
 	// 	Atributos
+	protected String nombre;
 	protected Componente compAnterior;
 	protected Componente compSiguiente;
 	
 	
 	//	Métodos
 	
-	public Componente() {
+	public Componente(String nombre) {
+		this.nombre = nombre;
 		this.compAnterior = null;
 		this.compSiguiente = null;
 	}
 
 
-	public Componente(Componente compAnterior, Componente compSiguiente) {
+	public Componente(String nombre, Componente compAnterior, Componente compSiguiente) {
+		this.nombre = nombre;
 		this.compAnterior = compAnterior;
 		this.compSiguiente = compSiguiente;
 	}
@@ -23,7 +26,7 @@ public class Componente {
 
 	@Override
 	public String toString() {
-		return "Componente [compAnterior=" + compAnterior + ", compSiguiente=" + compSiguiente + "]";
+		return "Componente [compAnterior=" + compAnterior.nombre + ", compSiguiente=" + compSiguiente.nombre + "]";
 	}
 
 
