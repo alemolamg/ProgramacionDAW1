@@ -11,23 +11,23 @@ public class Resistencia extends Componente {
 	 * @param compSiguiente
 	 * @param resistencia
 	 */
-	public Resistencia(Componente compAnterior, Componente compSiguiente, int resistencia) {
-		super(compAnterior, compSiguiente);
+	public Resistencia(String nombre, Componente compAnterior, Componente compSiguiente, int resistencia) {
+		super(nombre,compAnterior, compSiguiente);
 		this.resistencia = resistencia;
 	}
 
 	/**
 	 * @param resistencia
 	 */
-	public Resistencia(int resistencia) {
-		super();
+	public Resistencia(String nombre, int resistencia) {
+		super(nombre);
 		this.resistencia = resistencia;
 	}
 
 	@Override
 	public String toString() {
-		return "Resistencia [resistencia=" + resistencia + ", compAnterior=" + compAnterior + ", compSiguiente="
-				+ compSiguiente + "]";
+		return "Resistencia [resistencia=" + resistencia + " ohmnios, compAnterior=" + compAnterior.nombre + ", compSiguiente="
+				+ compSiguiente.nombre + "]";
 	}
 
 	public int getResistencia() {
