@@ -1,4 +1,4 @@
-package capitulo06_Recursos.math;
+package capitulo06_Recursos;
 
 public class Ejercicio03_numeroPI {
 
