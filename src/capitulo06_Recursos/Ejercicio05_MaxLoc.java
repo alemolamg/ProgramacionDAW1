@@ -1,4 +1,4 @@
-package capitulo06_Recursos.math;
+package capitulo06_Recursos;
 
 public class Ejercicio05_MaxLoc {
 	public static void main(String[] args) {
