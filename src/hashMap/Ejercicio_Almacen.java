@@ -2,48 +2,119 @@ package hashMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+
+import alemol.UtilsAlemol;
 
 public class Ejercicio_Almacen {
 	
 	public HashMap<Integer, Articulo> almacen = new HashMap<Integer, Articulo>();
 	
+	private static Ejercicio_Almacen instance = new Ejercicio_Almacen();
+	
+	
+	public static Ejercicio_Almacen getInstance () {
+		if (instance == null) { // Si no está inicializada, se inicializa
+			instance = new Ejercicio_Almacen();
+		}
+		return instance;
+	}
+	
+	public Ejercicio_Almacen() {
+		aniadirArticulosHashMap(generaArticulos());
+	}
+	
 	public static void main(String[] args) {
+		boolean activo = true;
 		
+		do {
+			Ejercicio_Almacen.getInstance().mensajeMenu();
+			activo = Ejercicio_Almacen.getInstance().menu();
+		} while (activo);
+		
+		System.out.println("\nFin del programa.");
 	}
 	
 	
-	
-	public void mostrarMensajeMenu() {
-		System.out.println("***  Menu de artículos  ***");
+	public void mensajeMenu() {
+		System.out.println("\n\n***  Menu de artículos  ***");
 		System.out.println("Elige una opción: \n" + 
 					"1. Añadir artículo al almacen\n"
 					+ "2. Borrar un artículo del almacen\n"
 					+ "3. Actualizar estante de un artículo\n"
-					+ "4. Imprimir lista de artículos");
+					+ "4. Imprimir lista de artículos\n"
+					+ "Otro Número, terminar programa.\n\n"
+					+ "Introduce tu número: ");
 	}
 	
 	
-	public void menu(boolean wanda) {
-		int num = 0;
+	public boolean menu() {
+		int num = UtilsAlemol.obtenerEnteroScanner();
 		
 		switch(num) {
-		case 0:
-			aniadirArticulos();
-			break;
 		case 1:
-			borrarArticulos();
-			break;
+			aniadirArticulos();
+			return true;
 		case 2:
-			actualizarEstante();
-			break;
+			borrarArticulos();
+			return true;
 		case 3:
+			//actualizarEstante();
+			return true;
+		case 4:
 			imprimirArticulos();
-			break;
-		default:
-				wanda = false;
+			return true;
+		}	
+		return false;
+	}
+	
+	
+	private void imprimirArticulos() {
+		Iterator<Articulo> art = this.almacen.values().iterator();
+		while (art.hasNext()) {
+			System.out.println(art.next());
 		}
+	}
+
+	private void borrarArticulos() {
+		System.out.println("\nIntroduce el código del artículo a borrar: ");
+		int cod = UtilsAlemol.obtenerEnteroScanner();
 		
+		if (almacen.get(cod) != null) {		//comprobamos que existe el artículo en la HashMap
+			System.out.println("\n--- Se ha eliminado el artículo cod = "+ cod + " ,estante = " + almacen.get(cod).getNumEstante() + " ---");
+			this.almacen.remove(cod);
+		} else
+			System.out.println("Artículo con código = " + cod + " no encontrado.");
+	}
+
+	private void aniadirArticulos() {
+		int cod = 0, estante = 0;
+		//Mensajes para optener los datos del artículo.
+		System.out.println("\n\nEscribe el código del artículo: ");
+		cod = UtilsAlemol.obtenerEnteroScanner();
+		System.out.println("\n\nEscribe el estante donde está el artículo: ");
+		estante = UtilsAlemol.obtenerEnteroScanner();
+		// función para añadir artículo.
+		aniadirArticulosHashMap(new Articulo(cod, estante));
+	}
+	
+	/**
+	 * añade un artículo al HashMap.
+	 * @param articulo
+	 */
+	public void aniadirArticulosHashMap(Articulo articulo) {
+		this.almacen.put(articulo.getCodBarras(), articulo);
+	}
+	
+	/**
+	 * añade una lista de artículos al HashMap.
+	 * @param listaArticulos
+	 */
+	public void aniadirArticulosHashMap(List<Articulo> listaArticulos) {
+		for (Articulo art: listaArticulos  ){
+			this.almacen.put(art.getCodBarras(), art);
+		}
 	}
 	
 	/**
