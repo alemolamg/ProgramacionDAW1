@@ -1,9 +1,11 @@
 package hashMap;
 
+import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+
 
 import alemol.UtilsAlemol;
 
@@ -44,7 +46,8 @@ public class Ejercicio_Almacen {
 					+ "2. Borrar un artículo del almacen\n"
 					+ "3. Actualizar estante de un artículo\n"
 					+ "4. Imprimir lista de artículos\n"
-					+ "Otro Número, terminar programa.\n\n"
+					+ "5. Mostrar estante de un artículo\n"
+					+ "Otro Número: terminar programa.\n\n"
 					+ "Introduce tu número: ");
 	}
 	
@@ -54,22 +57,61 @@ public class Ejercicio_Almacen {
 		
 		switch(num) {
 		case 1:
-			aniadirArticulos();
+			//aniadirArticulos();
+			actualizarEstante();	//Utilización de un mismo método para verificar repetidos.
 			return true;
 		case 2:
 			borrarArticulos();
 			return true;
 		case 3:
-			//actualizarEstante();
+			actualizarEstante();
 			return true;
 		case 4:
 			imprimirArticulos();
 			return true;
+		case 5:
+			mostrarUnArticulo();
 		}	
 		return false;
 	}
 	
 	
+	private void mostrarUnArticulo() {
+		System.out.println("\n\nEscribe el código del artículo a buscar: ");
+		int cod = UtilsAlemol.obtenerEnteroScanner();
+		
+		if(almacen.get(cod) != null) {
+			System.out.println(almacen.get(cod));
+		} else
+			System.out.println("El artículo con el código de barras "+ cod
+					+ " no está en nuestro almacén.");
+		
+		
+	}
+
+	private void actualizarEstante() {
+		int cod = 0, estante = 0;
+		boolean continuar = true;
+		//Mensajes para optener los datos del artículo.
+		System.out.println("\n\nEscribe el código del artículo: ");
+		cod = UtilsAlemol.obtenerEnteroScanner();
+		
+		if (almacen.get(cod) != null) {
+			System.out.println("El artículo ya existe\n" + almacen.get(cod).toString()
+					+ "\n ¿quieres actualizar? (s,n)");
+			String texto= UtilsAlemol.leerStringScanner();
+			if(texto == "n" || texto == "N")
+				continuar = false;
+		}
+		
+		if(continuar) {
+			System.out.println("\n\nEscribe el estante donde está el artículo: ");
+			estante = UtilsAlemol.obtenerEnteroScanner();
+			aniadirArticulosHashMap(new Articulo(cod, estante));
+		}
+		
+	}
+
 	private void imprimirArticulos() {
 		Iterator<Articulo> art = this.almacen.values().iterator();
 		while (art.hasNext()) {
@@ -95,8 +137,10 @@ public class Ejercicio_Almacen {
 		cod = UtilsAlemol.obtenerEnteroScanner();
 		System.out.println("\n\nEscribe el estante donde está el artículo: ");
 		estante = UtilsAlemol.obtenerEnteroScanner();
+		
 		// función para añadir artículo.
 		aniadirArticulosHashMap(new Articulo(cod, estante));
+		
 	}
 	
 	/**
@@ -129,7 +173,6 @@ public class Ejercicio_Almacen {
 		listaArticulos.add(new Articulo(004, 1));
 		listaArticulos.add(new Articulo(010, 3));
 		listaArticulos.add(new Articulo(005, 3));
-		listaArticulos.add(new Articulo(012, 3));
 		listaArticulos.add(new Articulo(007, 2));
 		listaArticulos.add(new Articulo(011, 1));
 		listaArticulos.add(new Articulo(022, 4));
