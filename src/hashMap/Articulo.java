@@ -21,4 +21,10 @@ public class Articulo {
 		this.numEstante = numEstante;
 	}
 
+	@Override
+	public String toString() {
+		return "Articulo [codigo de barras=" + codBarras + ", Estante=" + numEstante + "]";
+	}
+
+	
 }
