@@ -69,6 +69,11 @@ public class UtilsAlemol {
 		String str = JOptionPane.showInputDialog("Introduce un número");
 		return Integer.parseInt(str);
 	}
+	
+	public static String obtenerTexto(String textoMostrar) {
+		String str = JOptionPane.showInputDialog(textoMostrar);
+		return str;
+	}
 
 	
 	/**
