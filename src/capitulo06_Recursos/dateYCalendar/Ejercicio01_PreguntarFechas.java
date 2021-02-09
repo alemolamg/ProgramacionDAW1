@@ -31,6 +31,9 @@ public class Ejercicio01_PreguntarFechas {
 		calendario.setTime(fechaParseada);
 		
 		mostrarConsola(calendario, fechaParseada);
+		
+		distintosDias(calendario);
+		
 	}
 	
 	
@@ -43,6 +46,36 @@ public class Ejercicio01_PreguntarFechas {
 		
 		System.out.println("Dia desde fecha " + new SimpleDateFormat("dd").format(fecha));
 		System.out.println("Dia desde calendar " + calendario.get(Calendar.DAY_OF_MONTH));
+	}
+	
+	
+	public static void distintosDias(Calendar calendario) {
+		System.out.println("Fecha original: " + calendario.toString());
+		
+		calendario.add(Calendar.DAY_OF_MONTH, 3);
+		System.out.println("Fecha actual + 3 dias: " + calendario.getTime());
+
+		calendario.add(Calendar.WEEK_OF_YEAR, -2);
+		System.out.println("Fecha actual - 2 semanas: " + calendario.getTime());
+		
+		calendario.add(Calendar.DAY_OF_YEAR, 300);
+		System.out.println("Fecha actual + 300 dias: " + calendario.getTime());
+		
+		calendario.add(Calendar.YEAR, 4);
+		System.out.println("Fecha actual + 4 años: " + calendario.getTime());
+		
+		
+	}
+	
+	
+	private static void ejemploSumaRestaFechas () {
+		Calendar ahora = Calendar.getInstance();
+		ahora.add(Calendar.DAY_OF_MONTH, 20);
+		System.out.println("Ahora más 20 días : " + ahora.getTime());
+
+		ahora = Calendar.getInstance();
+		ahora.add(Calendar.DAY_OF_MONTH, -20);
+		System.out.println("Ahora menos 20 días : " + ahora.getTime());
 	}
 	
 }
