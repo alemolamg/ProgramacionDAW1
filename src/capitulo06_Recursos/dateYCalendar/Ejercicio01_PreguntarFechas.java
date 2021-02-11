@@ -11,9 +11,9 @@ import alemol.UtilsAlemol;
 public class Ejercicio01_PreguntarFechas {
 
 	public static void main(String[] args) {
-//		String stringFecha = UtilsAlemol.obtenerTexto("Añade una fecha en el formato \n"
-//				+ "dd/MM/yyyy");
-		String stringFecha = "5/08/2019";
+		String stringFecha = UtilsAlemol.obtenerTexto("Añade una fecha en el formato \n"
+				+ "dd/MM/yyyy");
+//		String stringFecha = "5/08/2019";
 		
 		SimpleDateFormat sdf1 = new SimpleDateFormat ("dd/MM/yyyy");
 		Date fechaParseada = null;
@@ -46,11 +46,16 @@ public class Ejercicio01_PreguntarFechas {
 		
 		System.out.println("Dia desde fecha " + new SimpleDateFormat("dd").format(fecha));
 		System.out.println("Dia desde calendar " + calendario.get(Calendar.DAY_OF_MONTH));
+		
+		System.out.println("Dia desde fecha " + new SimpleDateFormat("HH").format(fecha));
+		System.out.println("Dia desde calendar " + calendario.get(Calendar.HOUR_OF_DAY));
+		
+		
 	}
 	
 	
 	public static void distintosDias(Calendar calendario) {
-		System.out.println("Fecha original: " + calendario.toString());
+//		System.out.println("Fecha original: " + calendario.toString());
 		
 		calendario.add(Calendar.DAY_OF_MONTH, 3);
 		System.out.println("Fecha actual + 3 dias: " + calendario.getTime());
@@ -64,18 +69,7 @@ public class Ejercicio01_PreguntarFechas {
 		calendario.add(Calendar.YEAR, 4);
 		System.out.println("Fecha actual + 4 años: " + calendario.getTime());
 		
-		
 	}
 	
-	
-	private static void ejemploSumaRestaFechas () {
-		Calendar ahora = Calendar.getInstance();
-		ahora.add(Calendar.DAY_OF_MONTH, 20);
-		System.out.println("Ahora más 20 días : " + ahora.getTime());
-
-		ahora = Calendar.getInstance();
-		ahora.add(Calendar.DAY_OF_MONTH, -20);
-		System.out.println("Ahora menos 20 días : " + ahora.getTime());
-	}
 	
 }
