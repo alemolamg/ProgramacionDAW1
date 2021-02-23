@@ -19,16 +19,12 @@ public class Ejercicio02_ItaliaYSidney {
 	}
 	
 	public static void calcularDiferenciaEntreFechas() {
-		long miliAustralia = ahoraEnAustralia.getInstance().getTimeInMillis();
-		long miliItalia = ahoraEnItalia.getInstance().getTimeInMillis();
+		short horaAustralia = (short) ahoraEnAustralia.getInstance().HOUR_OF_DAY;
+		short horaItalia = (short) ahoraEnItalia.getInstance().HOUR_OF_DAY;
 		
-		long milisegundos = Math.abs(miliAustralia - miliItalia);
-		double horas = milisegundos/3600000;
-		long restohora = milisegundos%3600000;
-		long minuto = restohora/60000;
-		long restominuto = restohora%60000;
+		short diferencia = (short) Math.abs(horaAustralia - horaItalia);
 	 
-		System.out.println("La diferencia en horas es: " + horas + ", " + restohora + ", " + minuto + ", " + restominuto);
+		System.out.println("La diferencia en horas es: " + diferencia);
 	}
 
 	private static void ejemploZonasHorarias () {
